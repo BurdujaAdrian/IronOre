@@ -1,0 +1,20 @@
+Cassy is a model university student with perfect grades and attendance.
+Young Cassy is fascinated by the world of computer science.
+In particular, Cassy is amazed by programming langueges.
+One day, after watching a video where the youtuber wrote a simple programming languege in a few hours, Cassy gets inspired to make one, simply for the sake of the experience.
+
+
+However, Cassy doesn't have any ideas for the shape of the languege, nor does Cassy think Cassy has enough free time to actually work and finish the languege, so Cassy postpones this adventure for later.
+
+The adventure is revived, months later, when Cassy is inspired by an article that compares existing langueges, and then Cassy notices a gap, a misterious feature that none of the langueges have but Cassy is sure it will revolutionase the industry if Cassy manages to create it. 
+
+With this Cassy start off by doing even more research into how langueges actually work.
+Cassy stumbles uppon the wonderful world of parsers, tokenizers, abstract sintax trees the ellusive assembly languege.
+
+While working on the lang,Cassy find that Cassy doesn't have enough time to both give enough development time for the game and to get maximum grades at university.
+
+At one of the lectures, Cassy get's inpired by the words of one of the teachers, "if you're feeling sick or simply don't feel like going to lectures, it's ok to stay at home or sleep longer, you are more important than your grades".
+Then realises that getting the best results in uni isn't the be all end all.
+
+From that point, Cassy has figured a plan on how to get good enough grades, be absent from as many pairs as allowed, and still pass the university, all while having extra time for working on the languege.
+
