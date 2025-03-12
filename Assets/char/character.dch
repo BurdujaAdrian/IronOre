@@ -1,0 +1,47 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "teacker_happy_upper_portrait",
+"description": "",
+"display_name": "Teacher",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"teacker_angry_upper_portrait": {
+"export_overrides": {
+"image": "\"res://assets/char/teacker_angry_upper_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"teacker_happy_upper_portrait": {
+"export_overrides": {
+"image": "\"res://assets/char/teacker_happy_upper_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"teacker_upper_portrait": {
+"export_overrides": {
+"image": "\"res://assets/char/teacker_upper_portrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}
