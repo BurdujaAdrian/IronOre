@@ -1,0 +1,15 @@
+<narator>
+In his first week, Cassy finds that he won't have enough time to pour his all into both language deveopment and studying hard enough to get only the best grades.
+
+*scene <university lecture>
+<teacher>
+"... On a separate note, if you are feeling sick or not well enough to attend a lecture, it's okey to stay at home or sleep longer."
+"You are more important than your grades!"
+
+<Cassy>
+The teacher is quite accommodating.
+Getting only the best results in uni isn't everything.
+
+<narator>
+From that point on, Cassy made up a plan.
+Be absent from as many pairs as allowed yet still pass the university! That will leave more time to the most important - language development!
