@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr34ldw6kghmh"
-path="res://.godot/imported/wallpaperflare.com_wallpaper(1).jpg-d3884f135f886868e276fc9c7306ee7e.ctex"
+path="res://.godot/imported/wallpaperflare.com_wallpaper(1).jpg-2a47eff0e06c364fbcc9156ca7184bce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backrounds/wallpaperflare.com_wallpaper(1).jpg"
-dest_files=["res://.godot/imported/wallpaperflare.com_wallpaper(1).jpg-d3884f135f886868e276fc9c7306ee7e.ctex"]
+source_file="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg"
+dest_files=["res://.godot/imported/wallpaperflare.com_wallpaper(1).jpg-2a47eff0e06c364fbcc9156ca7184bce.ctex"]
 
 [params]
 

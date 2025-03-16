@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyvfum0mie3dr"
-path="res://.godot/imported/teacker_happy_upper_portrait.png-afca50a992f3d08b124e6f598898703b.ctex"
+path="res://.godot/imported/teacker_happy_upper_portrait.png-95b1c0d85ecd1f00de04994646c66f11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char/teacker_happy_upper_portrait.png"
-dest_files=["res://.godot/imported/teacker_happy_upper_portrait.png-afca50a992f3d08b124e6f598898703b.ctex"]
+source_file="res://Assets/char/teacker_happy_upper_portrait.png"
+dest_files=["res://.godot/imported/teacker_happy_upper_portrait.png-95b1c0d85ecd1f00de04994646c66f11.ctex"]
 
 [params]
 

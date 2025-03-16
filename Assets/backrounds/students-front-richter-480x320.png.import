@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coal6cgishayg"
-path="res://.godot/imported/students-front-richter-480x320.png-44512afd7f488e69caa5475d41de0ffc.ctex"
+path="res://.godot/imported/students-front-richter-480x320.png-81df545782b05889ab97e81e1db61dce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backrounds/students-front-richter-480x320.png"
-dest_files=["res://.godot/imported/students-front-richter-480x320.png-44512afd7f488e69caa5475d41de0ffc.ctex"]
+source_file="res://Assets/backrounds/students-front-richter-480x320.png"
+dest_files=["res://.godot/imported/students-front-richter-480x320.png-81df545782b05889ab97e81e1db61dce.ctex"]
 
 [params]
 
