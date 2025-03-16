@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtg002q65w3j8" path="res://Assets/backrounds/IronOre.png" id="1_06t4h"]
 
-[node name="main_menu" type="Node2D"]
+[node name="generic_dialogue" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1

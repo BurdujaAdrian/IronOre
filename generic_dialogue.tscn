@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://xkybmncu57qs"]
+
+[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="1_ok1o3"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="2_8ins6"]
+
+[node name="generic_dialogue" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ok1o3")
+expand_mode = 1
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="save" type="Button" parent="ui"]
+offset_right = 126.0
+offset_bottom = 40.0
+action_mode = 0
+text = "Save game"
+autowrap_mode = 3
+
+[node name="exit" type="Button" parent="ui"]
+offset_top = 60.0
+offset_right = 126.0
+offset_bottom = 100.0
+action_mode = 0
+text = "Exit game"
+autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ui"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = -200.0
+offset_right = -74.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_8ins6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ui/PanelContainer"]
+layout_mode = 2
+text = "Lorem ipsum bla bla bla"
