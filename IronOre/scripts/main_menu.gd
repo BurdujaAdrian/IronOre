@@ -26,8 +26,9 @@ func _load_game():
 	print("open previous game")
 
 	curr_scene = Global.load_game()
-	get_tree().root.add_child(curr_scene)
-	get_tree().root.remove_child($"..")
+	var active_scene = Global.main.get_child(0)
+	Global.main.remove_child(active_scene)
+	Global.main.add_child(curr_scene)
 	pass
 
 func _new_game():

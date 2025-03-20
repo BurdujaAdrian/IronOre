@@ -48,3 +48,15 @@ One day, he saw a video where a streamer wrote a simple programming language in 
 Cassy got inspired to make one of his own for the sake of experience.
 However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
 So, Cassy postponed this adventure for later."
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 160.0
+color = Color(1, 1, 1, 0)

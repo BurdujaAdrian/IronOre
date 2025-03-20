@@ -37,6 +37,7 @@ func save_game() :
 	config_file.set_value("Progress", "week",week)
 	config_file.set_value("Progress","route",route)
 	config_file.set_value("Progress","scene",scene)
+	config_file.set_value("Progress","line",last_line_id)
 	config_file.set_value("Progress", "last_choice",last_choice)
 	config_file.set_value("Progress","curr_choice",curr_choice)
 	
@@ -62,6 +63,8 @@ func load_game() -> Node:
 	week = config_file.get_value("Progress", "week",week)
 	route = config_file.get_value("Progress","route",route)
 	scene = config_file.get_value("Progress","scene",scene)
+	last_line_id = config_file.get_value("Progress","line",last_line_id)
+
 	last_choice = config_file.get_value("Progress", "last_choice",last_choice)
 	curr_choice =  config_file.get_value("Progress","curr_choice",curr_choice)
 	
@@ -96,6 +99,8 @@ func goto_main():
 	var curr_scene = load("res://scenes/main_menu.tscn").instantiate()
 	
 	var active_scene = Global.main.get_child(0)
+	print(get_tree_string())
+
 	Global.main.remove_child(active_scene)
 	print(get_tree_string())
 	Global.main.add_child(curr_scene)
