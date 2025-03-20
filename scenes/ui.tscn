@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://clodg2ukj6rvj"]
+
+[ext_resource type="Script" uid="uid://dahfkvrdh8iv5" path="res://scripts/ui.gd" id="1_nt7q6"]
+
+[node name="ui" type="Node2D"]
+script = ExtResource("1_nt7q6")
+
+[node name="generic_ui" type="CanvasLayer" parent="."]
+
+[node name="save" type="Button" parent="generic_ui"]
+offset_right = 126.0
+offset_bottom = 40.0
+action_mode = 0
+text = "Save game"
+autowrap_mode = 3
+
+[node name="exit" type="Button" parent="generic_ui"]
+offset_top = 60.0
+offset_right = 126.0
+offset_bottom = 100.0
+action_mode = 0
+text = "Exit game"
+autowrap_mode = 3

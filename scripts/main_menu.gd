@@ -7,7 +7,7 @@ func _ready() -> void:
 	if Global.global_true:
 		print("true")
 	$ui/new.pressed.connect(_new_game)
-	$ui/exit.pressed.connect(_exit_game)
+	$ui/exit.pressed.connect(Global.exit)
 	pass # Replace with function body.
 
 
@@ -22,8 +22,4 @@ func _new_game():
 
 	get_tree().root.add_child(dialogue_scene)
 	get_tree().root.remove_child($"..")
-	pass
-
-func _exit_game():
-	get_tree().quit(0)
 	pass
