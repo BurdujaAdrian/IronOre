@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://doph7qc2nv4nk"]
+
+[ext_resource type="Script" uid="uid://dcw88k58pid0w" path="res://scripts/generic_dialogue.gd" id="1_l1v76"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_00tan"]
+
+[node name="generic_dialogue" type="Node2D"]
+script = ExtResource("1_l1v76")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_00tan")
+expand_mode = 1
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="save" type="Button" parent="ui"]
+offset_right = 126.0
+offset_bottom = 40.0
+action_mode = 0
+text = "Save game"
+autowrap_mode = 3
+
+[node name="work" type="Button" parent="ui"]
+offset_left = 853.0
+offset_top = 440.0
+offset_right = 979.0
+offset_bottom = 517.0
+action_mode = 0
+text = "Stay home and work on languege"
+autowrap_mode = 3
+
+[node name="learn" type="Button" parent="ui"]
+offset_left = 75.0
+offset_top = 517.0
+offset_right = 201.0
+offset_bottom = 594.0
+action_mode = 0
+text = "Go to university and study"
+autowrap_mode = 3
+
+[node name="relax" type="Button" parent="ui"]
+offset_left = 334.0
+offset_top = 322.0
+offset_right = 460.0
+offset_bottom = 399.0
+action_mode = 0
+text = "Stay home and relax"
+autowrap_mode = 3
+
+[node name="exit" type="Button" parent="ui"]
+offset_top = 60.0
+offset_right = 126.0
+offset_bottom = 100.0
+action_mode = 0
+text = "Exit game"
+autowrap_mode = 3
