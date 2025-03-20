@@ -4,6 +4,8 @@ var dialogue_scene = preload("res://scenes/generic_dialogue.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Global.global_true:
+		print("true")
 	$ui/new.pressed.connect(_new_game)
 	$ui/exit.pressed.connect(_exit_game)
 	pass # Replace with function body.
