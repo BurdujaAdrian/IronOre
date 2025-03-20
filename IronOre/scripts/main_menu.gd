@@ -8,6 +8,8 @@ func _ready() -> void:
 		print("true")
 	$ui/new.pressed.connect(_new_game)
 	$ui/exit.pressed.connect(Global.exit)
+	
+	Global.load_game()
 	pass # Replace with function body.
 
 

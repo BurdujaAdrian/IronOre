@@ -19,14 +19,22 @@ var last_line_id:int
 
 enum game_choice{study,work,relax}
 
-func _ready() -> void:
+func _ready() :
 		
 	pass
 
-func save_game() -> void:
+func save_game() :
 	print("saving game...")
 	pass
 	
-func exit() -> void:
+func load_game():
+	print("loading game ...")
+	pass
+	
+
+func reset_game():
+	pass
+
+func exit() :
 	get_tree().quit(0)
 	pass
