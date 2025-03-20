@@ -2,12 +2,11 @@ extends Node
 
 var global_true = true
 
+var main:Node
+
 var study:int = 0
-
 var lang:int = 0
-
 var stress:int = 0
-
 
 var week:int     = 0
 var route:routes = routes.prologue; enum routes{main,gpt,prologue}
@@ -90,9 +89,16 @@ func reset_game():
 	last_choice = game_choice.none
 	curr_choice = game_choice.none
 	
-	
 	save_game()
 	return load_game()
+
+func goto_main():
+	var curr_scene = load("res://scenes/main_menu.tscn").instantiate()
+	
+	var active_scene = Global.main.get_child(0)
+	Global.main.remove_child(active_scene)
+	print(get_tree_string())
+	Global.main.add_child(curr_scene)
 
 func exit() :
 	get_tree().quit(0)

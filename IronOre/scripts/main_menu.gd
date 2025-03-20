@@ -12,6 +12,7 @@ func _ready() -> void:
 	$ui/exit.pressed.connect(Global.exit)
 	
 	curr_scene = Global.load_game()
+	Global.main = $".."
 	pass # Replace with function body.
 
 
@@ -33,6 +34,9 @@ func _new_game():
 	print("make new game")
 
 	curr_scene = Global.reset_game()
-	get_tree().root.add_child(curr_scene)
-	get_tree().root.remove_child($"..")
+	
+	var active_scene = Global.main.get_child(0)
+	Global.main.remove_child(active_scene)
+	Global.main.add_child(curr_scene)
+	
 	pass

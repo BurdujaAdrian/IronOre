@@ -5,4 +5,5 @@ extends Node2D
 func _ready() -> void:
 	$generic_ui/save.pressed.connect(Global.save_game)
 	$generic_ui/exit.pressed.connect(Global.exit)
+	$generic_ui/main.pressed.connect(Global.goto_main)
 	pass # Replace with function body.
