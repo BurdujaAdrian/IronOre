@@ -1,0 +1,33 @@
+<narator>
+The lecture finishes uneventfully and Cassy gathers his backpack to go home.
+Once Cassy enters his room, his phone virbrates signaling an new notification.
+
+<Classmate>
+"Hey, Cassy, there is going to be party on Saturday."
+"Will you be there? :)"
+
+<narator>
+Saturdays are free and that usually means more time to spend on language development.
+Alternatively, Cassy could just relax all day on his own.
+Or, answer his friend and show up at the party.
+
+*language
+<narator>
+Cassy writes to his friend.
+<Cassy>
+"Sorry, I already have plans for this Saturday."
+I should focus on what is more important in the feature!
+Which is writing my programming language.
+
+*relax
+<narator>
+Cassy writes to his friend.
+<Cassy>
+"Sorry, I already have plans for this Saturday."
+
+*party
+<narator>
+Cassy writes to his friend.
+<Cassy>
+"Sure. See you there!"
+This should be a good oppurtunity to make new friends.
