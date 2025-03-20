@@ -15,6 +15,7 @@ enum routes{generic,gpt}
 
 var last_choice:game_choice
 var curr_choice:game_choice
+var last_line_id:int
 
 enum game_choice{study,work,relax}
 
