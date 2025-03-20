@@ -2,22 +2,22 @@ extends Node
 
 var global_true = true
 
-var study:int
+var study:int = 0
 
-var lang:int
+var lang:int = 0
 
-var stress:int
+var stress:int = 0
 
 
 var week:int     = 0
 var route:routes = routes.prologue; enum routes{main,gpt,prologue}
 var scene:int    = 1
 
-var last_choice:game_choice
-var curr_choice:game_choice
-var last_line_id:int
+var last_choice:game_choice = game_choice.none
+var curr_choice:game_choice = game_choice.none
+var last_line_id:int=0
 
-enum game_choice{study,work,relax}
+enum game_choice{study,work,relax,none,special}
 
 func _ready() :
 		
@@ -79,7 +79,20 @@ func load_game() -> Node:
 	
 
 func reset_game():
-	pass
+	week= 0
+	route= routes.prologue
+	scene= 1
+	
+	study= 0
+	lang= 0
+	stress= 0
+	
+	last_choice = game_choice.none
+	curr_choice = game_choice.none
+	
+	
+	save_game()
+	return load_game()
 
 func exit() :
 	get_tree().quit(0)
