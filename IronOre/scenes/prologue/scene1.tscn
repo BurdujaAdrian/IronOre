@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://mcrkirb4p2w3"]
+[gd_scene load_steps=5 format=3 uid="uid://mcrkirb4p2w3"]
 
 [ext_resource type="Script" uid="uid://lcndaboftrgk" path="res://scenes/prologue/scene1.gd" id="1_5ohue"]
 [ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="1_b30c8"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="2_5ohue"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_1mfro"]
-[ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="4_6og3i"]
 
 [node name="Scene1" type="Node2D"]
 script = ExtResource("1_5ohue")
@@ -26,21 +25,17 @@ expand_mode = 1
 [node name="text_ui" type="CanvasLayer" parent="."]
 
 [node name="PanelContainer" type="PanelContainer" parent="text_ui"]
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -200.0
-offset_right = -74.0
-offset_bottom = -50.0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = -82.0
+offset_bottom = 570.0
 grow_horizontal = 2
-grow_vertical = 0
 theme = ExtResource("3_1mfro")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("4_6og3i")
 text = "Cassy is a model university student with perfect grades and attendance.
 He is fascinated by the world of computer science.
 In particular, Cassy is amazed by programming langueges.
