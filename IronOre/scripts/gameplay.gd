@@ -13,11 +13,12 @@ func _learn() :
 	print("time to learn")
 	Global.study += 1
 	Global.stress+=1
+	get_tree().change_scene_to_file("res://scenes/prologue/week2_party.tscn")  # Change to the correct path
 	pass
 
 func _work() :
 	print("time to work")
-	Global.lang_progress +=1
+	Global.lang	 +=1
 	Global.stress+=1
 	pass
 

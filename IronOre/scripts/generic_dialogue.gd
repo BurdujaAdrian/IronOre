@@ -5,6 +5,7 @@ var text_speed = 60
 var text_length:int = 0
 var display_text_len:float = 0
 # Called when the node enters the scene tree for the first time.
+
 var text_lines = [
 	"line 1",
 	"line 2",

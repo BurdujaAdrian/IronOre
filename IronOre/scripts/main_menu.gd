@@ -41,3 +41,6 @@ func _new_game():
 	Global.main.add_child(curr_scene)
 	
 	pass
+	
+func _go_to_scene2():
+	get_tree().change_scene_to_file("res://scenes/prologue/scene1.tscn")

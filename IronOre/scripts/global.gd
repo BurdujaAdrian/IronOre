@@ -7,6 +7,10 @@ var main:Node
 var study:int = 0
 var lang:int = 0
 var stress:int = 0
+var is_mentor:bool = false
+var is_friend:bool = false
+var corect_bug:bool = false
+
 
 var week:int     = 0
 var route:routes = routes.prologue; enum routes{main,gpt,prologue}

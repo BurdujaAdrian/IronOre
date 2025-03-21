@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxxpoxcxv2gjm"]
 
-[ext_resource type="Texture2D" uid="uid://dtg002q65w3j8" path="res://Assets/backrounds/IronOre.png" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://167nfcbrd11j" path="res://Assets/backrounds/IronOre.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://vh4mh17iumuu" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 
 [node name="main_menu" type="Node2D"]
