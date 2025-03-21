@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://mcrkirb4p2w3"]
 
-[ext_resource type="Script" uid="uid://bh4b5fjnwveso" path="res://scenes/prologue/scene_1.gd" id="1_5ohue"]
+[ext_resource type="Script" path="res://scenes/prologue/scene_1.gd" id="1_5ohue"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="2_5ohue"]
-[ext_resource type="Texture2D" uid="uid://dfdgl7ijcnnav" path="res://Assets/backrounds/students-front-richter-480x320.png" id="2_b30c8"]
+[ext_resource type="Texture2D" uid="uid://coal6cgishayg" path="res://Assets/backrounds/students-front-richter-480x320.png" id="2_b30c8"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_1mfro"]
 
 [node name="Scene1" type="Node2D"]

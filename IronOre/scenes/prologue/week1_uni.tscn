@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://l3hewwdsrn1n"]
 
-[ext_resource type="Script" uid="uid://b84b24jldfgon" path="res://scenes/prologue/week_1_uni.gd" id="1_4yjx0"]
-[ext_resource type="Texture2D" uid="uid://c2sf51aqqx5p2" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
+[ext_resource type="Script" path="res://scenes/prologue/week_1_uni.gd" id="1_4yjx0"]
+[ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 var text_speed = 60
 @onready var dialogue_box = $text_ui/PanelContainer/RichTextLabel
-@onready var character_name_label = $text_ui/CharacterName
+@onready var character_name_label = $Character/Control/CharacterName
 var text_length:int = 0
 var display_text_len:float = 0
 var line_id:int = 0
@@ -11,7 +11,7 @@ var tween
 
 var text_lines = [
 "Ion: Excuse me! I really enjoyed the lecture—and I’ve been working on a project I’d love your feedback on.",
-	"Guest: Oh? I'd be happy to hear about it. Tell me more.",
+	"Professor: Oh? I'd be happy to hear about it. Tell me more.",
 	"Ion: It’s about [insert short project idea here]. I think it could really help students like me.",
 	"Guest: That’s a very thoughtful concept. I’m impressed, Ion.",
 	"Guest: Let me give you my contact info. Reach out if you ever want feedback or advice.",
@@ -33,27 +33,13 @@ func _process(delta: float):
 	if line_timeout > 0:
 		line_timeout -= delta
 
-func show_character_name(name: String):
-	character_name_label.text = name
 
-	if name == "Professor":
-		character_name_label.position.y -= 10  # Smaller initial movement for smoother effect
-
-		if tween:
-			tween.kill()
-		tween = get_tree().create_tween()
-		tween.tween_property(character_name_label, "position:y", character_name_label.position.y + 10, 0.5).set_trans(Tween.TRANS_BOUNCE)  # Slower bounce (0.5s)
-	else:
-		character_name_label.position.y = 0  # Reset position for Ion
-
+			
 func display_text():
 	if line_id < len(text_lines):
 		var current_text = text_lines[line_id]
 		
-		if ":" in current_text:
-			var parts = current_text.split(": ", false, 1)
-			show_character_name(parts[0])
-			current_text = parts[1]
+		current_text = $Character.show_character_name(current_text)
 
 		dialogue_box.text = current_text
 		dialogue_box.visible_characters = 0
