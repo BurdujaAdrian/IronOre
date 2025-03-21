@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy3j08u0gyls7"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3j08u0gyls7"]
 
 [ext_resource type="Script" uid="uid://coplxi4ye7nut" path="res://scenes/prologue/week_4_lecture_teacher.gd" id="1_b50rf"]
-[ext_resource type="Texture2D" uid="uid://c2sf51aqqx5p2" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_b50rf"]
-[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_4vl3b"]
+[ext_resource type="Texture2D" uid="uid://858wb06fj6gi" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_b50rf"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
-[ext_resource type="Texture2D" uid="uid://vdlp2x1jmjgf" path="res://Assets/char/teacker_upper_portrait.png" id="4_n1b67"]
+[ext_resource type="Texture2D" uid="uid://bnkh1o501ybnu" path="res://Assets/char/teacker_upper_portrait.png" id="4_n1b67"]
 [ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
 
 [node name="generic_dialogue" type="Node2D"]
@@ -45,7 +44,7 @@ offset_right = -74.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("3_4vl3b")
+theme = ExtResource("5_4vl3b")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2

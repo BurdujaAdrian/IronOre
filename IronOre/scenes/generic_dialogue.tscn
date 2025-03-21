@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://xkybmncu57qs"]
+[gd_scene load_steps=5 format=3 uid="uid://xkybmncu57qs"]
 
 [ext_resource type="Script" uid="uid://dcw88k58pid0w" path="res://scripts/generic_dialogue.gd" id="1_8sdtg"]
-[ext_resource type="Texture2D" uid="uid://bvdparhbvj6w3" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_aqnu7"]
-[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_4vl3b"]
+[ext_resource type="Texture2D" uid="uid://edkwku5f83u8" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_aqnu7"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
 [ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
 
@@ -36,7 +35,7 @@ offset_right = -74.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("3_4vl3b")
+theme = ExtResource("5_4vl3b")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2
