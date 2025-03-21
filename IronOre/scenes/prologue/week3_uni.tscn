@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://1686qqw2ne2n"]
+
+[ext_resource type="Texture2D" uid="uid://c2sf51aqqx5p2" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
+
+[sub_resource type="GDScript" id="GDScript_qrof6"]
+script/source = "extends Node2D
+
+var text_speed = 60
+@onready var dialogue_box = $text_ui/PanelContainer/RichTextLabel
+var text_length:int = 0
+var display_text_len:float = 0
+
+var text_lines = [
+	\"Professor: Welcome, everyone. Today, we’ll be diving into a fundamental topic that will shape the way you approach this subject.\",
+	\"Professor: Understanding the core principles is not just about memorization but about applying critical thinking and problem-solving skills in real-world scenarios.\",
+	\"Professor: Throughout this course, you will be challenged to push beyond simple answers and explore deeper connections between concepts.\",
+	\"Professor: Many of you may feel overwhelmed at first, and that’s completely normal. The key is persistence.\",
+	\"Professor: Mistakes will happen, but they are stepping stones to mastery.\",
+	\"Professor: Engage with the material, ask questions, and most importantly, learn to think independently.\",
+	\"Professor: Now, before we wrap up, I have an announcement.\",
+	\"Professor: Next week, we will have a special guest joining us—someone with extensive experience in the field.\",
+	\"Professor: They will be sharing insights that you won’t find in textbooks, so I highly encourage all of you to attend and come prepared with questions.\",
+	\"Professor: It’s an opportunity you won’t want to miss.\"
+
+]
+
+var line_id:int = 0
+var line_timeout:float = 0.5
+var text_fully_displayed:bool = false  # Track if text has fully appeared
+
+func _ready():
+	dialogue_box.text = text_lines[0]  # Load text
+	dialogue_box.visible_characters = 0  # Reset text effect
+	display_text_len = 0  # Ensure smooth typing effect starts
+
+
+func _process(delta: float):
+	text_length = len(dialogue_box.text)
+	if dialogue_box.visible_characters < text_length:
+		display_text_len += delta * text_speed
+		dialogue_box.visible_characters = floor(display_text_len)
+	else:
+		text_fully_displayed = true  # Text is now fully displayed
+
+	if line_timeout > 0:
+		line_timeout -= delta
+
+func display_text():
+	dialogue_box.text = text_lines[line_id]
+	dialogue_box.visible_characters = 0
+	display_text_len = 0
+	text_fully_displayed = false  # Reset text state
+
+func _next_line():
+	if line_id < len(text_lines) - 1:
+		line_id += 1
+		display_text()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == 1:
+		if not text_fully_displayed:
+			# If text is not finished displaying, instantly show it
+			dialogue_box.visible_characters = len(dialogue_box.text)
+			text_fully_displayed = true
+		elif line_id < len(text_lines) - 1:
+			# Move to next line only when current text is fully shown
+			_next_line()
+"
+
+[node name="generic_wall" type="Node2D"]
+script = SubResource("GDScript_qrof6")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4yjx0")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_vugah")]
+
+[node name="text_ui" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = -82.0
+offset_bottom = 570.0
+grow_horizontal = 2
+theme = ExtResource("3_jj01j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
+layout_mode = 2
+text = "Cassy is a model university student with perfect grades and attendance.
+He is fascinated by the world of computer science.
+In particular, Cassy is amazed by programming langueges.
+One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
+Cassy got inspired to make one of his own for the sake of experience.
+However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
+So, Cassy postponed this adventure for later."

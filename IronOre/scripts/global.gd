@@ -37,6 +37,8 @@ func save_game() :
 	config_file.set_value("Variables", "lang", lang)
 	config_file.set_value("Variables", "stress", stress)
 	config_file.set_value("Variables", "study", study)
+	config_file.set_value("Variables", "Profesor", is_mentor)
+	config_file.set_value("Variables", "drujoc", is_friend)
 	
 	config_file.set_value("Progress", "week",week)
 	config_file.set_value("Progress","route",route)
@@ -63,6 +65,8 @@ func load_game() -> Node:
 	lang = config_file.get_value("Variables", "lang", lang)
 	stress = config_file.get_value("Variables", "stress", stress)
 	study = config_file.get_value("Variables", "study", study)
+	is_mentor = config_file.get_value("Variables", "Profesor", is_mentor)
+	is_mentor = config_file.get_value("Variables", "drujoc", is_friend)
 	
 	week = config_file.get_value("Progress", "week",week)
 	route = config_file.get_value("Progress","route",route)

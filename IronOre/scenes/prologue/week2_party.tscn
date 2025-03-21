@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://66oagijt3ry1"]
+
+[ext_resource type="Script" uid="uid://vj4idl5wv3xp" path="res://scenes/prologue/week_2_party.gd" id="1_6q8xu"]
+[ext_resource type="Texture2D" uid="uid://ku0s0o2tex3u" path="res://Assets/backrounds/party_.png" id="2_6q8xu"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_4vl3b"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
+[ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
+[ext_resource type="Texture2D" uid="uid://cddn4u2e0oeuf" path="res://Assets/char/helper2_half_normal.png" id="6_icd3q"]
+
+[node name="generic_dialogue" type="Node2D"]
+script = ExtResource("1_6q8xu")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6q8xu")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_aqnu7")]
+
+[node name="text_ui" type="CanvasLayer" parent="."]
+
+[node name="CharacterName" type="Label" parent="text_ui"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="text_ui/CharacterName"]
+position = Vector2(581, 367)
+texture = ExtResource("6_icd3q")
+
+[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = -200.0
+offset_right = -74.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_4vl3b")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("5_4vl3b")
+text = "Cassy is a model university student with perfect grades and attendance.
+He is fascinated by the world of computer science.
+In particular, Cassy is amazed by programming langueges.
+One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
+Cassy got inspired to make one of his own for the sake of experience.
+However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
+So, Cassy postponed this adventure for later."

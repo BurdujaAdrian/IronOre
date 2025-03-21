@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqwkftn7x064k"]
+
+[ext_resource type="Script" uid="uid://bnr0bwe1agtjf" path="res://scenes/prologue/week_2_lobby.gd" id="1_bnyj8"]
+[ext_resource type="Texture2D" uid="uid://bj2qkemj1kh42" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_6yxs0"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_rhuqb"]
+
+[node name="generic_dialogue" type="Node2D"]
+script = ExtResource("1_bnyj8")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6yxs0")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_rhuqb")]
+position = Vector2(750.998, 237.603)
+
+[node name="gameplay_ui" type="CanvasLayer" parent="."]
+
+[node name="work" type="Button" parent="gameplay_ui"]
+offset_left = 853.0
+offset_top = 440.0
+offset_right = 979.0
+offset_bottom = 517.0
+action_mode = 0
+text = "Stay home and work on languege"
+autowrap_mode = 3
+
+[node name="learn" type="Button" parent="gameplay_ui"]
+offset_left = 75.0
+offset_top = 517.0
+offset_right = 201.0
+offset_bottom = 594.0
+action_mode = 0
+text = "Go to party"
+autowrap_mode = 3
+
+[node name="relax" type="Button" parent="gameplay_ui"]
+offset_left = 334.0
+offset_top = 322.0
+offset_right = 460.0
+offset_bottom = 399.0
+action_mode = 0
+text = "Stay home and relax"
+autowrap_mode = 3

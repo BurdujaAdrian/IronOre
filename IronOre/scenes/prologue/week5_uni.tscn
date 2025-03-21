@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsv8m43taounu"]
+
+[ext_resource type="Script" uid="uid://bgw6mndonypd2" path="res://scenes/prologue/week_5_uni.gd" id="1_nfnsr"]
+[ext_resource type="Texture2D" uid="uid://c2sf51aqqx5p2" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
+
+[node name="generic_wall" type="Node2D"]
+script = ExtResource("1_nfnsr")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4yjx0")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_vugah")]
+
+[node name="text_ui" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = -82.0
+offset_bottom = 570.0
+grow_horizontal = 2
+theme = ExtResource("3_jj01j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
+layout_mode = 2
+text = "Cassy is a model university student with perfect grades and attendance.
+He is fascinated by the world of computer science.
+In particular, Cassy is amazed by programming langueges.
+One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
+Cassy got inspired to make one of his own for the sake of experience.
+However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
+So, Cassy postponed this adventure for later."
