@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gwbv2bkph8c6"]
 
-[ext_resource type="Script" uid="uid://xv5c7uuc3g4o" path="res://scenes/character.gd" id="1_rkhd4"]
+[ext_resource type="Script" uid="uid://xv5c7uuc3g4o" path="res://scripts/character.gd" id="1_rkhd4"]
 [ext_resource type="Texture2D" uid="uid://cmvw6fq382rag" path="res://Assets/char/teacker_upper_portrait.png" id="2_lrhn5"]
 
 [node name="Character" type="Node2D"]

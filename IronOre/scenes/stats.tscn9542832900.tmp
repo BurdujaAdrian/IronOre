@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgr7ojtrqxm0"]
+
+[ext_resource type="Theme" uid="uid://bxmvj0v8hfigi" path="res://stats.tres" id="1_3f7q0"]
+
+[sub_resource type="GDScript" id="GDScript_fk87l"]
+script/source = "extends Node2D
+
+@onready var work = $CanvasLayer/Control/Work
+@onready var work_rect = $CanvasLayer/Control/WorkRect
+var MAX_WORK = 15
+
+func _ready() -> void:
+	var ratio:float = 0.5 #(Global.lang)/MAX_WORK
+	work.text = \" Work progresss: %s\" % (ratio*100)
+	work_rect.size = Vector2(work_rect.size.x * ratio ,work_rect.size.y)
+	work_rect.position += Vector2(work_rect.size.x, 0)
+	pass
+
+
+	
+"
+
+[node name="stats" type="Node2D"]
+script = SubResource("GDScript_fk87l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -189.0
+offset_top = 23.0
+offset_right = -10.0
+offset_bottom = 63.0
+grow_horizontal = 0
+
+[node name="WorkRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_top = 27.0
+offset_right = -13.0
+offset_bottom = 59.0
+grow_horizontal = 0
+
+[node name="Work" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -147.0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 59.0
+theme = ExtResource("1_3f7q0")
+text = " Work level:%s"
+vertical_alignment = 1
+text_direction = 2

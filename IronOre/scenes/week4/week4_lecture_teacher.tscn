@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://66oagijt3ry1"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3j08u0gyls7"]
 
-[ext_resource type="Script" path="res://scenes/prologue/week_2_party.gd" id="1_6q8xu"]
-[ext_resource type="Texture2D" uid="uid://borpq07ogi83l" path="res://Assets/backrounds/party_.png" id="2_6q8xu"]
+[ext_resource type="Script" uid="uid://coplxi4ye7nut" path="res://scenes/week_4_lecture_teacher.gd" id="1_b50rf"]
+[ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_b50rf"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_4vl3b"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
+[ext_resource type="Texture2D" uid="uid://cmvw6fq382rag" path="res://Assets/char/teacker_upper_portrait.png" id="4_n1b67"]
 [ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
-[ext_resource type="Texture2D" uid="uid://cq4jimi1bj2jt" path="res://Assets/char/helper2_half_normal.png" id="6_icd3q"]
 
 [node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_6q8xu")
+script = ExtResource("1_b50rf")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6q8xu")
+texture = ExtResource("2_b50rf")
 expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("3_aqnu7")]
@@ -32,7 +32,7 @@ offset_bottom = 23.0
 
 [node name="Sprite2D" type="Sprite2D" parent="text_ui/CharacterName"]
 position = Vector2(581, 367)
-texture = ExtResource("6_icd3q")
+texture = ExtResource("4_n1b67")
 
 [node name="PanelContainer" type="PanelContainer" parent="text_ui"]
 anchors_preset = 12
