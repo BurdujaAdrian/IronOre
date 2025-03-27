@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwou3hqtts687"]
+
+[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="1_ky6ii"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_8aber"]
+
+[sub_resource type="GDScript" id="GDScript_gwqdn"]
+script/source = "extends Node2D
+
+@onready var dialogue_box =$text_ui/PanelContainer/RichTextLabel
+@onready var text_length:int = 0
+@onready var display_text_len:float = 0
+var text_speed = 60
+
+var text_lines = [
+\"Cassy succesfully finishes this semester/year\",
+\"Cassy finishes university with stelar grades. With the confidence built up from the
+last project, Cassy tries to make another programming languege with heavy help from
+chat gpt, but the languege never takes off. Cassy tries over and over again but fails
+each time, unable to learn from the previous mistakes.\" 
+
+]
+var line_id:int=0
+
+var line_timeout:float=0.5
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$generic_ui2/exit.pressed.connect(Global.exit)
+	$generic_ui2/main.pressed.connect(Global.goto_main)
+	text_length = len(dialogue_box.text)
+	dialogue_box.text = text_lines[line_id]
+	dialogue_box.visible_characters = 0
+	pass # Replace with function body.
+
+
+func _process(delta: float):
+	text_length = len(dialogue_box.text)
+	if dialogue_box.visible_characters < text_length :
+		display_text_len += delta*text_speed
+		dialogue_box.visible_characters = floor(display_text_len)
+	
+	if line_timeout > 0 :
+		line_timeout-=delta
+		print(line_timeout)
+	pass
+
+func _next_line() :
+	line_id+=1
+	dialogue_box.text = text_lines[line_id]
+	dialogue_box.visible_characters = 0
+	display_text_len = 0
+	pass
+
+func _input(event:InputEvent) -> void:
+	if (event is InputEventMouseButton):
+		if ((event.button_index == 1) \\
+			&& dialogue_box.visible_characters == len(dialogue_box.text)\\
+			&& line_timeout < 0\\
+			&& line_id < len(text_lines) -1):
+			line_timeout = 1
+			_next_line()
+			return
+
+		dialogue_box.visible_characters = len(dialogue_box.text)
+"
+
+[node name="gptending" type="Node2D"]
+script = SubResource("GDScript_gwqdn")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ky6ii")
+expand_mode = 1
+
+[node name="text_ui" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = -82.0
+offset_bottom = 570.0
+grow_horizontal = 2
+theme = ExtResource("3_8aber")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
+layout_mode = 2
+text = "Cassy is a model university student with perfect grades and attendance.
+He is fascinated by the world of computer science.
+In particular, Cassy is amazed by programming langueges.
+One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
+Cassy got inspired to make one of his own for the sake of experience.
+However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
+So, Cassy postponed this adventure for later."
+
+[node name="generic_ui2" type="CanvasLayer" parent="."]
+
+[node name="exit" type="Button" parent="generic_ui2"]
+offset_top = 60.0
+offset_right = 126.0
+offset_bottom = 100.0
+action_mode = 0
+text = "Exit game"
+autowrap_mode = 3
+
+[node name="main" type="Button" parent="generic_ui2"]
+offset_right = 126.0
+offset_bottom = 40.0
+action_mode = 0
+text = "Main menu"
+autowrap_mode = 3

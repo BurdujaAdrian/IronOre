@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be7oxly8bg4ot"]
 
 [ext_resource type="Script" uid="uid://dcw88k58pid0w" path="res://scripts/generic_dialogue.gd" id="1_he8dl"]
-[ext_resource type="Texture2D" uid="uid://cqam8t6j5huil" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_vugah"]
+[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_vugah"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
 

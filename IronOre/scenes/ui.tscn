@@ -29,3 +29,4 @@ offset_bottom = 100.0
 action_mode = 0
 text = "Main menu"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
