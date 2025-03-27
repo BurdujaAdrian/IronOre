@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://xkybmncu57qs"]
+[gd_scene load_steps=5 format=3 uid="uid://bmhbbghna471t"]
 
-[ext_resource type="Script" uid="uid://dcw88k58pid0w" path="res://scripts/generic_dialogue.gd" id="1_8sdtg"]
-[ext_resource type="Texture2D" uid="uid://cqam8t6j5huil" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_aqnu7"]
-[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
-[ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
+[ext_resource type="Script" uid="uid://baa2ajs6qq1c0" path="res://scenes/prologue/week_8_uni.gd" id="1_06uty"]
+[ext_resource type="Texture2D" uid="uid://dsg6nd4ja8dfs" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
+[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
 
-[node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_8sdtg")
+[node name="generic_wall" type="Node2D"]
+script = ExtResource("1_06uty")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -17,29 +17,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_aqnu7")
+texture = ExtResource("2_4yjx0")
 expand_mode = 1
 
-[node name="ui" parent="." instance=ExtResource("3_aqnu7")]
+[node name="ui" parent="." instance=ExtResource("3_vugah")]
 
 [node name="text_ui" type="CanvasLayer" parent="."]
 
 [node name="PanelContainer" type="PanelContainer" parent="text_ui"]
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -200.0
-offset_right = -74.0
-offset_bottom = -50.0
+offset_left = 150.0
+offset_top = 40.0
+offset_right = -82.0
+offset_bottom = 570.0
 grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_4vl3b")
+theme = ExtResource("3_jj01j")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("5_4vl3b")
 text = "Cassy is a model university student with perfect grades and attendance.
 He is fascinated by the world of computer science.
 In particular, Cassy is amazed by programming langueges.

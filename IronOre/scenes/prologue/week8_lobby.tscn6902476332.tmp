@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://8ny4oqu4ii0k"]
+[gd_scene load_steps=4 format=3 uid="uid://wl6dfls8mm0e"]
 
-[ext_resource type="Script" uid="uid://bkv4uso313evr" path="res://scenes/prologue/week_3_lobby.gd" id="1_xp7dn"]
+[ext_resource type="Script" uid="uid://ctey2bnkt1f5a" path="res://scenes/prologue/week_8_lobby.gd" id="1_u4yue"]
 [ext_resource type="Texture2D" uid="uid://cb8gcys2nq5pp" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_6yxs0"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_rhuqb"]
 
 [node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_xp7dn")
+script = ExtResource("1_u4yue")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -50,3 +50,13 @@ offset_bottom = 399.0
 action_mode = 0
 text = "Stay home and relax"
 autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 185.0
+offset_top = 413.0
+offset_right = 967.0
+offset_bottom = 559.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+text = "asdasd"
