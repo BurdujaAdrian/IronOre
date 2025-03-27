@@ -11,7 +11,7 @@ func _ready() -> void:
 		
 func _learn() :
 	print("time to learn")
-	Global.study += 1
+	Global.learn += 1
 	Global.stress+=1
 	get_tree().change_scene_to_file("res://scenes/prologue/week2_party.tscn")  # Change to the correct path
 	pass

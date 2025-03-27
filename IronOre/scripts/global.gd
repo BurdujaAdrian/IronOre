@@ -5,9 +5,14 @@ var global_true = true
 var main:Node
 
 var learn:int = 0
-var lang:int = 0
-var stress:int = 0
+const MAX_STUDY = 15
 
+
+var lang:int = 0
+const MAX_WORK = 15
+
+var stress:int = 0
+const MAX_STRESS = 5
 var is_mentor:bool = false
 var is_friend:bool = false
 var corect_bug:bool = false
@@ -127,10 +132,14 @@ func exit() :
 	pass
 	
 func work():
-	if stress > 5:
+	if stress > MAX_STRESS:
 		lang+=1
 		return
-	lang+=3
+	lang +=3
+	
+	if lang > MAX_WORK:
+		lang = MAX_WORK
+		
 	stress+=1
 	
 
@@ -139,6 +148,9 @@ func study():
 		learn+=1
 		return
 	learn+=3
+	
+	if learn > MAX_STUDY:
+		learn = MAX_STUDY
 	stress+=1
 	
 

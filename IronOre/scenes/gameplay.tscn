@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://doph7qc2nv4nk"]
+[gd_scene load_steps=5 format=3 uid="uid://doph7qc2nv4nk"]
 
-[ext_resource type="Script" uid="uid://bhy7xhwjgfviv" path="res://scripts/gameplay.gd" id="1_l1v76"]
-[ext_resource type="Texture2D" uid="uid://bj2qkemj1kh42" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_00tan"]
+[ext_resource type="Script" uid="uid://bhy7xhwjgfviv" path="res://scenes/week4/gameplay.gd" id="1_l1v76"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_00tan"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_l1v76"]
+[ext_resource type="PackedScene" uid="uid://bgr7ojtrqxm0" path="res://scenes/stats.tscn" id="4_ct7aa"]
 
 [node name="generic_dialogue" type="Node2D"]
 script = ExtResource("1_l1v76")
@@ -50,3 +51,5 @@ offset_bottom = 399.0
 action_mode = 0
 text = "Stay home and relax"
 autowrap_mode = 3
+
+[node name="stats" parent="gameplay_ui" instance=ExtResource("4_ct7aa")]

@@ -7,13 +7,40 @@ script/source = "extends Node2D
 
 @onready var work = $CanvasLayer/Control/Work
 @onready var work_rect = $CanvasLayer/Control/WorkRect
-var MAX_WORK = 15
+var MAX_WORK = Global.MAX_WORK
 
+@onready var study = $CanvasLayer/Control/Study
+@onready var study_rect = $CanvasLayer/Control/StudyRect
+var MAX_STUDY = Global.MAX_STUDY
+
+@onready var stress = $CanvasLayer/Control/Stress
+@onready var stress_rect = $CanvasLayer/Control/StressRect
+var MAX_STRESS = Global.MAX_STRESS
 func _ready() -> void:
-	var ratio:float = 0.75 #(Global.lang)/MAX_WORK
-	work.text = \" Work progresss: %s\" % (ratio*100)
+	var ratio:float = (float(Global.lang))/MAX_WORK
+	work.text = \" Lang progresss: %d\" % (ratio*100)
+	work_rect.position += Vector2(work_rect.size.x * (1-ratio), 0)
 	work_rect.size = Vector2(work_rect.size.x * ratio ,work_rect.size.y)
-	#work_rect.position += Vector2(work_rect.size.x, 0)
+	
+	ratio = (float(Global.learn))/MAX_STUDY
+	study.text = \"Study progresss: %d\" % (ratio*100)
+	study_rect.position += Vector2(study_rect.size.x * (1-ratio), 0)
+	study_rect.size = Vector2(study_rect.size.x * ratio ,study_rect.size.y)
+	
+	ratio = (float(Global.stress))/MAX_STRESS
+	stress.text = \"Stress level: %d\" % (ratio*100)
+	stress_rect.position += Vector2(stress_rect.size.x * (1-ratio), 0)
+	stress_rect.size = Vector2(stress_rect.size.x * ratio ,stress_rect.size.y)
+	
+	match Global.stress:
+		0,1,2,3 :
+			stress_rect.color = Color.LIME_GREEN
+		4 :
+			stress_rect.color = Color.YELLOW
+		5 : 
+			stress_rect.color = Color.RED
+	stress.add_theme_color_override(\"font_outline_color\", stress_rect.color)
+	
 	pass
 
 
@@ -30,39 +57,109 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -62.0
+offset_top = 25.0
+offset_right = -22.0
+offset_bottom = 65.0
+grow_horizontal = 0
+
+[node name="WorkPanel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -177.0
+offset_right = 2.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -189.0
-offset_top = 23.0
-offset_right = -10.0
-offset_bottom = 63.0
-grow_horizontal = 0
-
 [node name="WorkRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -187.0
-offset_top = 27.0
-offset_right = -13.0
-offset_bottom = 59.0
+offset_left = -175.0
+offset_top = 4.0
+offset_right = -1.0
+offset_bottom = 36.0
 grow_horizontal = 0
 
 [node name="Work" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = -147.0
-offset_top = 27.0
-offset_right = 27.0
-offset_bottom = 59.0
+offset_left = -135.0
+offset_top = 4.0
+offset_right = 39.0
+offset_bottom = 36.0
 theme = ExtResource("1_3f7q0")
 text = " Work level:%s"
+vertical_alignment = 1
+text_direction = 2
+
+[node name="StudyPanel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 60.0
+offset_right = 4.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[node name="StudyRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -173.0
+offset_top = 64.0
+offset_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 0
+
+[node name="Study" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -133.0
+offset_top = 64.0
+offset_right = 41.0
+offset_bottom = 96.0
+theme = ExtResource("1_3f7q0")
+text = " Study level:%s"
+vertical_alignment = 1
+text_direction = 2
+
+[node name="StressPanel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 120.0
+offset_right = 4.0
+offset_bottom = 160.0
+grow_horizontal = 0
+
+[node name="StressRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -173.0
+offset_top = 124.0
+offset_right = 1.0
+offset_bottom = 156.0
+grow_horizontal = 0
+
+[node name="Stress" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -133.0
+offset_top = 124.0
+offset_right = 41.0
+offset_bottom = 156.0
+theme = ExtResource("1_3f7q0")
+text = " Study level:%s"
 vertical_alignment = 1
 text_direction = 2
