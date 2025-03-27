@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy3j08u0gyls7"]
+[gd_scene load_steps=6 format=3 uid="uid://dy3j08u0gyls7"]
 
 [ext_resource type="Script" path="res://scenes/prologue/week_4_lecture_teacher.gd" id="1_b50rf"]
 [ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_b50rf"]
@@ -45,7 +45,7 @@ offset_right = -74.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("3_4vl3b")
+theme = ExtResource("5_4vl3b")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2

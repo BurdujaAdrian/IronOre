@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://66oagijt3ry1"]
+[gd_scene load_steps=6 format=3 uid="uid://66oagijt3ry1"]
 
 [ext_resource type="Script" path="res://scenes/prologue/week_2_party.gd" id="1_6q8xu"]
 [ext_resource type="Texture2D" uid="uid://borpq07ogi83l" path="res://Assets/backrounds/party_.png" id="2_6q8xu"]
@@ -45,7 +45,7 @@ offset_right = -74.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("3_4vl3b")
+theme = ExtResource("5_4vl3b")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
 layout_mode = 2
