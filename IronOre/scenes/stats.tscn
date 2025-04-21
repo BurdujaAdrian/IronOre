@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgr7ojtrqxm0"]
 
-[ext_resource type="Theme" uid="uid://bxmvj0v8hfigi" path="res://stats.tres" id="1_3f7q0"]
+[ext_resource type="Theme" uid="uid://bxmvj0v8hfigi" path="res://styles/stats.tres" id="1_3f7q0"]
 
 [sub_resource type="GDScript" id="GDScript_fk87l"]
 script/source = "extends Node2D

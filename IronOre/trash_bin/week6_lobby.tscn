@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://wl6dfls8mm0e"]
+[gd_scene load_steps=5 format=3 uid="uid://cluevfo8trvur"]
 
-[ext_resource type="Script" uid="uid://ctey2bnkt1f5a" path="res://scenes/prologue/week_8_lobby.gd" id="1_u4yue"]
-[ext_resource type="Texture2D" uid="uid://cb8gcys2nq5pp" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_6yxs0"]
+[ext_resource type="Script" uid="uid://dkn52y5v5fill" path="res://trash_bin/week_6_lobby.gd" id="1_gl1kv"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_6yxs0"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_rhuqb"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="4_truy2"]
 
 [node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_u4yue")
+script = ExtResource("1_gl1kv")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -26,30 +26,30 @@ position = Vector2(750.998, 237.603)
 [node name="gameplay_ui" type="CanvasLayer" parent="."]
 
 [node name="work" type="Button" parent="gameplay_ui"]
-offset_left = 853.0
-offset_top = 440.0
-offset_right = 979.0
-offset_bottom = 517.0
+offset_left = 492.0
+offset_top = 364.0
+offset_right = 695.0
+offset_bottom = 441.0
 action_mode = 0
-text = "Stay home and work on languege"
+text = "ask a mentor for help"
 autowrap_mode = 3
 
 [node name="learn" type="Button" parent="gameplay_ui"]
-offset_left = 75.0
-offset_top = 517.0
-offset_right = 201.0
-offset_bottom = 594.0
+offset_left = 493.0
+offset_top = 256.0
+offset_right = 692.0
+offset_bottom = 333.0
 action_mode = 0
-text = "Go to university and study"
+text = "try and fix the current implementation"
 autowrap_mode = 3
 
 [node name="relax" type="Button" parent="gameplay_ui"]
-offset_left = 334.0
-offset_top = 322.0
-offset_right = 460.0
-offset_bottom = 399.0
+offset_left = 492.0
+offset_top = 144.0
+offset_right = 698.0
+offset_bottom = 221.0
 action_mode = 0
-text = "Stay home and relax"
+text = "try to rewrite the parser"
 autowrap_mode = 3
 
 [node name="text_ui" type="CanvasLayer" parent="."]
@@ -57,10 +57,10 @@ autowrap_mode = 3
 [node name="PanelContainer" type="PanelContainer" parent="text_ui"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 85.0
-offset_top = 435.0
-offset_right = -82.0
-offset_bottom = 570.0
+offset_left = 162.0
+offset_top = 486.0
+offset_right = -83.0
+offset_bottom = 599.0
 grow_horizontal = 2
 theme = ExtResource("4_truy2")
 

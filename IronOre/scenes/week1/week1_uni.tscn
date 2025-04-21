@@ -1,12 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://l3hewwdsrn1n"]
 
-[ext_resource type="Script" uid="uid://b84b24jldfgon" path="res://scenes/week_1_uni.gd" id="1_4yjx0"]
 [ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_4yjx0"]
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_jj01j"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_vugah"]
 
+[sub_resource type="Resource" id="Resource_3w47o"]
+metadata/__load_path__ = "res://scenes/week_1_uni.gd"
+
 [node name="generic_wall" type="Node2D"]
-script = ExtResource("1_4yjx0")
+script = SubResource("Resource_3w47o")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1

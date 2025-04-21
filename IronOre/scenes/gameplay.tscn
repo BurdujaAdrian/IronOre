@@ -1,12 +1,45 @@
 [gd_scene load_steps=5 format=3 uid="uid://doph7qc2nv4nk"]
 
-[ext_resource type="Script" uid="uid://bhy7xhwjgfviv" path="res://scenes/week4/gameplay.gd" id="1_l1v76"]
 [ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_00tan"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_l1v76"]
 [ext_resource type="PackedScene" uid="uid://bgr7ojtrqxm0" path="res://scenes/stats.tscn" id="4_ct7aa"]
 
-[node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_l1v76")
+[sub_resource type="GDScript" id="GDScript_l1v76"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$gameplay_ui/work.pressed.connect(_work)
+	$gameplay_ui/learn.pressed.connect(_learn)
+	$gameplay_ui/relax.pressed.connect(_relax)
+	pass # Replace with function body.
+
+		
+func _learn() :
+	print(\"time to learn\")
+	Global.learn += 1
+	Global.stress+=1
+	get_tree().change_scene_to_file(\"res://scenes/prologue/week2_party.tscn\")  # Change to the correct path
+	pass
+
+func _work() :
+	print(\"time to work\")
+	Global.lang	 +=1
+	Global.stress+=1
+	pass
+
+func _on_exit() :
+	pass
+func _relax() -> void:
+	print(\"time to relax\")
+	if Global.stress > 0:
+		Global.stress -=1
+	pass
+"
+
+[node name="gameplay" type="Node2D"]
+script = SubResource("GDScript_l1v76")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1

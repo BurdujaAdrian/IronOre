@@ -1,7 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://mqxori2rchcy"]
 
 [ext_resource type="Texture2D" uid="uid://b4fqdkrnotmud" path="res://Assets/backrounds/wallpaperflare.com_wallpaper.jpg" id="2_nuuce"]
-[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_4vl3b"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
 [ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_4vl3b"]
 [ext_resource type="PackedScene" uid="uid://gwbv2bkph8c6" path="res://scenes/character.tscn" id="6_pqb0c"]

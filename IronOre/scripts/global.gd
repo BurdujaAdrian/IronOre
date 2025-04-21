@@ -4,19 +4,19 @@ var global_true = true
 
 var main:Node
 
-var learn:int = 0
+
 const MAX_STUDY = 15
-
-
-var lang:int = 0
 const MAX_WORK = 15
-
-var stress:int = 0
 const MAX_STRESS = 5
-var is_mentor:bool = false
-var is_friend:bool = false
-var corect_bug:bool = false
-var llvm_route:bool = false
+
+var learn:int = 0
+var lang:int = 0
+var stress:int = 0
+
+var is_mentor = false
+var is_friend = false
+var corect_bug = false
+var llvm_route = false
 
 var week:int     = 0
 var route:routes = routes.prologue; enum routes{main,gpt,prologue}
@@ -82,40 +82,51 @@ func load_game() -> Node:
 	route = config_file.get_value("Progress","route",route)
 	scene = config_file.get_value("Progress","scene",scene)
 	
-	last_line_id = config_file.get_value("Progress","line",last_line_id)
+	last_line_id = config_file.get_value("Progress","line",0)
 	last_choice = config_file.get_value("Progress", "last_choice",last_choice)
 	curr_choice =  config_file.get_value("Progress","curr_choice",curr_choice)
 	
 	var scene_path
-	
 	if week == 0:
 		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]
 	else:
 		scene_path = "res://scenes/week%s/scene_%s%s.tscn" % [week,route,scene]
-	
+	print(scene_path)
 	var scene_node = load(scene_path).instantiate()
 	
 	return scene_node
 	
 
 func reset_game():
-	week= 0
-	route= routes.prologue
-	scene= 1
-	
-	is_friend = false
+	learn = 0
+	lang = 0
+	stress = 0
+
 	is_mentor = false
+	is_friend = false
 	corect_bug = false
-	
-	learn= 0
-	lang= 0
-	stress= 0
-	
+	llvm_route = false
+
+	week     = 0
+	route = routes.prologue
+	scene    = 1
+
 	last_choice = game_choice.none
 	curr_choice = game_choice.none
-	
+	last_line_id=0
+		
 	save_game()
 	return load_game()
+
+func goto_scene(scene_path):
+	var curr_scene = load(scene_path).instantiate()
+	
+	var active_scene = Global.main.get_child(0)
+	print(get_tree_string())
+
+	Global.main.remove_child(active_scene)
+	print(get_tree_string())
+	Global.main.add_child(curr_scene)
 
 func goto_main():
 	var curr_scene = load("res://scenes/main_menu.tscn").instantiate()
@@ -127,6 +138,14 @@ func goto_main():
 	print(get_tree_string())
 	Global.main.add_child(curr_scene)
 
+func goto_gameplay():
+	var curr_scene = load("res://scenes/gameplay.tscn").instantiate()
+	var active_scene = Global.main.get_child(0)
+
+	Global.main.remove_child(active_scene)
+	print(get_tree_string())
+	Global.main.add_child(curr_scene)
+	
 func exit() :
 	get_tree().quit(0)
 	pass

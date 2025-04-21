@@ -1,11 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqwkftn7x064k"]
 
-[ext_resource type="Script" uid="uid://bnr0bwe1agtjf" path="res://scenes/week_2_lobby.gd" id="1_bnyj8"]
 [ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_6yxs0"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_rhuqb"]
 
+[sub_resource type="Resource" id="Resource_rwn7q"]
+metadata/__load_path__ = "res://scenes/week_2_lobby.gd"
+
 [node name="generic_dialogue" type="Node2D"]
-script = ExtResource("1_bnyj8")
+script = SubResource("Resource_rwn7q")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
