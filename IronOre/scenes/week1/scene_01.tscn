@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqrfrij2dbu3a"]
+[gd_scene load_steps=5 format=3 uid="uid://c2n4mpylcqw74"]
 
-[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_jksqg"]
-[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_33gvh"]
-[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="4_vldkp"]
-[ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="5_ql3hc"]
-
-[sub_resource type="Resource" id="Resource_fwcet"]
-metadata/__load_path__ = "res://scenes/prologue/scene1.gd"
+[ext_resource type="Script" uid="uid://c3g4o05n7chor" path="res://scenes/week1/scene_01.gd" id="1_fwcet"]
+[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_ctvf5"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_1gg3w"]
+[ext_resource type="PackedScene" uid="uid://bxouvway4hxv7" path="res://scenes/char_text.tscn" id="4_fwcet"]
 
 [node name="Scene1" type="Node2D"]
-script = SubResource("Resource_fwcet")
+physics_interpolation_mode = 2
+script = ExtResource("1_fwcet")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -20,36 +18,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jksqg")
+texture = ExtResource("2_ctvf5")
 expand_mode = 1
 
-[node name="ui" parent="." instance=ExtResource("3_33gvh")]
+[node name="ui" parent="." instance=ExtResource("3_1gg3w")]
 
-[node name="text_ui" type="CanvasLayer" parent="."]
-
-[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -200.0
-offset_right = -74.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("4_vldkp")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
-layout_mode = 2
-theme = ExtResource("5_ql3hc")
-text = "Cassy is a model university student with perfect grades and attendance.
-He is fascinated by the world of computer science.
-In particular, Cassy is amazed by programming langueges.
-One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
-Cassy got inspired to make one of his own for the sake of experience.
-However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
-So, Cassy postponed this adventure for later."
+[node name="charText" parent="." instance=ExtResource("4_fwcet")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -59,6 +33,6 @@ offset_bottom = 40.0
 
 [node name="No_mouse" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 126.0
-offset_bottom = 160.0
+offset_right = 150.0
+offset_bottom = 189.0
 color = Color(1, 1, 1, 0)

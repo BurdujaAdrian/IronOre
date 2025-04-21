@@ -6,19 +6,7 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"Cassy is a model university student with perfect grades and attendance.
-He is fascinated by the world of computer science.
-In particular, Cassy is amazed by programming langueges.
-One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
-Cassy got inspired to make one of his own for the sake of experience.
-However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
-So, Cassy postponed this adventure for later.",
-
-"Months later, Cassy's motivation is restored by a article that compares existing languages.
-He notices that all of the languages miss what he thinks will be a key feature of his language and if he succedes it will revolutionise the industry.
-With a pumping heart, Cassy dives in the research of languages' inner workings.
-He swims in the wonderful world of parsers, tokenizers, abstract sintax tress and the ellusive assembly languege.
-"
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 ]
 
 var line_timeout:float = 0.5

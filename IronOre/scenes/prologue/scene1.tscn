@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b3g5ey2rmxvw5" path="res://scenes/prologue/scene_1.gd" id="1_5ohue"]
 [ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="1_b30c8"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="2_5ohue"]
-[ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="3_1mfro"]
+[ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="4_b30c8"]
 
 [node name="Scene1" type="Node2D"]
+physics_interpolation_mode = 2
 script = ExtResource("1_5ohue")
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -22,27 +23,7 @@ expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("2_5ohue")]
 
-[node name="text_ui" type="CanvasLayer" parent="."]
-
-[node name="PanelContainer" type="PanelContainer" parent="text_ui"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 150.0
-offset_top = 40.0
-offset_right = -82.0
-offset_bottom = 570.0
-grow_horizontal = 2
-theme = ExtResource("3_1mfro")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
-layout_mode = 2
-text = "Cassy is a model university student with perfect grades and attendance.
-He is fascinated by the world of computer science.
-In particular, Cassy is amazed by programming langueges.
-One day, he saw a video where a streamer wrote a simple programming language in just a few hours.
-Cassy got inspired to make one of his own for the sake of experience.
-However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
-So, Cassy postponed this adventure for later."
+[node name="WallText" parent="." instance=ExtResource("4_b30c8")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
