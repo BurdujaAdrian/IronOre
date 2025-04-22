@@ -203,6 +203,7 @@ func study():
 	
 	last_choice = curr_choice
 	curr_choice = game_choice.learn
+	was_gameplay = false
 
 func relax():
 	print("relax")

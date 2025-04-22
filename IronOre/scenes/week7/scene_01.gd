@@ -7,7 +7,37 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"Nothing of note happened this week except the presentation of some known famous preson in the tech industry."
+"	The parser’s cursor blinks at me, a smug metronome. *2 + 3 * (4 - 1 / 0)* glows on the screen. A simple expression. A death sentence.
+",
+
+"“Run,” I mutter.
+",
+
+"The terminal vomits a waterfall of parse_expression() calls, recursive and rabid. My foot jitters under the desk. Click. Click. Click. The same line of code, the same function, the same fucking parentheses—
+",  
+"“Stop. Stop.” I slam the debugger. The stack trace mocks me: 147 layers deep and climbing. Infinite recursion. A snake eating its own tail.
+",   
+"I lean in, nose inches from the screen. “Where are you going?” The tokenizer’s pointer hovers over the closing bracket. It should advance. It doesn’t.
+",  
+"My notebook’s a graveyard of grammar rules:
+",   
+"*Expr → Term + Expr
+Term → Factor * Term
+Factor → ( Expr ) | Number*",
+
+"“Left recursion,” I hiss. The words taste like betrayal. I wrote this. I chose this. My own grammar, my own rules, strangling themselves.
+",  
+"I crush the paper. “Stupid. Stupid.”
+", 
+"The clock reads 4:16 a.m. I rewrite the productions, hands shaking:
+",   
+"*Expr → Term ( (+|-) Term )*
+Term → Factor ( (|/) Factor )*",  
+
+"“Precedence climbing. Should’ve… should’ve…” The compiler screeches syntax errors. Of course. I gutted its bones.
+", 
+"A notification lights up my phone: “Lecture in 3 hours.” I throw it across the room.
+",    
 ]
 
 var line_timeout:float = 0.5
@@ -79,5 +109,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(1,6)
-				Global.goto_gameplay()
+				Global.update_state(2)
+				Global.goto_next_scene()

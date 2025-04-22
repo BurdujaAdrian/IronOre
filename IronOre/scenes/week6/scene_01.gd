@@ -79,5 +79,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(1,5)
+				Global.update_state(1,7)
 				Global.goto_gameplay()

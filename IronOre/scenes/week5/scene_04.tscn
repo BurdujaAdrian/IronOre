@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsv5qrpek46wx"]
 
 [ext_resource type="Script" uid="uid://d3ine7b5ldqgc" path="res://scenes/week5/scene_04.gd" id="1_x0xmh"]
-[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_5kxf2"]
+[ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_x0xmh"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_fp4tv"]
 [ext_resource type="PackedScene" uid="uid://bxouvway4hxv7" path="res://scenes/char_text.tscn" id="4_u567g"]
 
-[node name="Scene1" type="Node2D"]
+[node name="Scene4" type="Node2D"]
 physics_interpolation_mode = 2
 script = ExtResource("1_x0xmh")
 
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5kxf2")
+texture = ExtResource("2_x0xmh")
 expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("3_fp4tv")]

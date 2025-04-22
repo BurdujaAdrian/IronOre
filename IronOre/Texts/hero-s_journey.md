@@ -84,7 +84,6 @@ important person will attend to give a talk >
 ---
 - week 5 :
 
-@
 
 < if the player actually goes to uni >
 
@@ -116,6 +115,8 @@ programming langueges.
 
 
 ---
+@
+
 - week 7: 
 Cassy will encounter a vicious bug in the languege. The parser uses recursive descent
 fir parsing mathematical expresions, however, for some reason certain expressions 

@@ -7,8 +7,18 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"Nothing of note happened this week except the presentation of some known famous preson in the tech industry."
-]
+"I stare at the shredded grammar rules on my desk. Left recursion. Of course. My own arrogance bit me. I open a fresh file, naming it parser_v2_scorched_earth.c, and start from zero.
+",
+"Bug 1: The original recursive descent couldn’t handle left-associative operators. Rewriting with precedence climbing—parse_expression(int min_precedence)—makes the recursion explicit, controlled.
+", 
+"Bug 2: The tokenizer wasn’t resetting after parentheses. Added tokenizer_sync() after each ( and ).
+", 
+"My hands shake as I type unit tests:
+", 
+"2 + 3 * (4 - 1)  
+1 / 0 // Intentional division-by-zero test  
+The debugger steps through cleanly. No loops. No hangs.",
+"By dawn, the tests pass. The clock reads 6:02 a.m. I collapse into bed, grinning. Tomorrow, I’ll actually… sleep.", ]
 
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
@@ -79,5 +89,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(1,6)
+				Global.update_state(1,8)
 				Global.goto_gameplay()
