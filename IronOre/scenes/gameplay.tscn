@@ -59,6 +59,7 @@ offset_bottom = 517.0
 action_mode = 0
 text = "Stay home and work on languege"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="learn" type="Button" parent="gameplay_ui"]
 offset_left = 75.0
@@ -68,6 +69,7 @@ offset_bottom = 594.0
 action_mode = 0
 text = "Go to university and study"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="relax" type="Button" parent="gameplay_ui"]
 offset_left = 334.0
@@ -77,5 +79,6 @@ offset_bottom = 399.0
 action_mode = 0
 text = "Stay home and relax"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="stats" parent="gameplay_ui" instance=ExtResource("4_ct7aa")]

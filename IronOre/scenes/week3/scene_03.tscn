@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dscyabh1fuqey"]
+
+[ext_resource type="Script" uid="uid://y1vjulf5mjva" path="res://scenes/week3/scene_03.gd" id="1_47let"]
+[ext_resource type="Texture2D" uid="uid://borpq07ogi83l" path="res://Assets/backrounds/party_.png" id="2_47let"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_hs75s"]
+[ext_resource type="PackedScene" uid="uid://bxouvway4hxv7" path="res://scenes/char_text.tscn" id="4_jdmdy"]
+
+[node name="Scene3" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_47let")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_47let")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_hs75s")]
+
+[node name="charText" parent="." instance=ExtResource("4_jdmdy")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 189.0
+color = Color(1, 1, 1, 0)

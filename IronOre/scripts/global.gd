@@ -19,8 +19,10 @@ var corect_bug = false
 var llvm_route = false
 
 var week:int     = 0
-var route:routes = routes.prologue; enum routes{main,gpt,prologue}
+var route:routes = routes.prologue; enum routes{main,gpt,prologue,party}
 var scene:int    = 1
+
+var was_gameplay:bool = false
 
 var last_choice:game_choice = game_choice.none
 var curr_choice:game_choice = game_choice.none
@@ -55,6 +57,8 @@ func save_game() :
 	config_file.set_value("Progress", "last_choice",last_choice)
 	config_file.set_value("Progress","curr_choice",curr_choice)
 	
+	config_file.set_value("Progress", "was_gameplay",was_gameplay)
+	
 	var error = config_file.save(save_path)
 	if error:
 		print("Error saving game progress: ",error)
@@ -86,9 +90,13 @@ func load_game() -> Node:
 	last_choice = config_file.get_value("Progress", "last_choice",last_choice)
 	curr_choice =  config_file.get_value("Progress","curr_choice",curr_choice)
 	
+	was_gameplay = config_file.get_value("Progress","was_gameplay",was_gameplay)
+	
 	var scene_path
 	if week == 0:
-		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]
+		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]	
+	elif was_gameplay:
+		scene_path = "res://scenes/gameplay.tscn"
 	else:
 		scene_path = "res://scenes/week%s/scene_%s%s.tscn" % [week,route,scene]
 	print(scene_path)
@@ -152,9 +160,11 @@ func goto_main():
 	Global.main.add_child(curr_scene)
 
 func goto_gameplay():
+	# fix saving mid gameplay
+	Global.last_line_id = 0
 	var curr_scene = load("res://scenes/gameplay.tscn").instantiate()
 	var active_scene = Global.main.get_child(0)
-
+	
 	Global.main.remove_child(active_scene)
 	print(get_tree_string())
 	Global.main.add_child(curr_scene)
@@ -175,6 +185,9 @@ func work():
 		
 	stress+=1
 	
+	last_choice = curr_choice
+	curr_choice = game_choice.work
+	
 
 func study():
 	print("study")
@@ -188,9 +201,14 @@ func study():
 		learn = MAX_STUDY
 	stress+=1
 	
+	last_choice = curr_choice
+	curr_choice = game_choice.learn
 
 func relax():
 	print("relax")
 
 	if stress > 0:
 		stress-=1
+	
+	last_choice = curr_choice
+	curr_choice = game_choice.relax

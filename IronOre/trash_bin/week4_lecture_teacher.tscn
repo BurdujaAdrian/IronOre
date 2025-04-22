@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy3j08u0gyls7"]
 
-[ext_resource type="Script" uid="uid://coplxi4ye7nut" path="res://scenes/week4/week_4_lecture_teacher.gd" id="1_b50rf"]
+[ext_resource type="Script" uid="uid://coplxi4ye7nut" path="res://trash_bin/week_4_lecture_teacher.gd" id="1_b50rf"]
 [ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_b50rf"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_aqnu7"]
 [ext_resource type="Texture2D" uid="uid://cmvw6fq382rag" path="res://Assets/char/teacker_upper_portrait.png" id="4_n1b67"]

@@ -49,6 +49,8 @@ time for working on the languege.
 ---
 - week 3:
 
+
+
 Cassy, in the second month of uni has a choice to either go to a party to relax
 and communicate with peers, stay at home and relax or work further on the languege.
 
@@ -81,6 +83,8 @@ important person will attend to give a talk >
 
 ---
 - week 5 :
+
+@
 
 < if the player actually goes to uni >
 
