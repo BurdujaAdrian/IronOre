@@ -1,25 +1,29 @@
 extends Node2D
 
 var text_speed = 60
-@onready var dialogue_box = $WallText/text_ui/PanelContainer/RichTextLabel
+@onready var dialogue_box = $charText/text_ui/PanelContainer/RichTextLabel
+@onready var char_box = $charText/Character
 var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+"This is a tempplate 1",
+"This is a template 2",
+"Teacher: That is a template 3",
+"Cassy: It's a template 4",
 ]
 
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
 
 func _ready():
-	dialogue_box.text = text_lines[Global.last_line_id]  # Load text
-	dialogue_box.visible_characters = 0  # Reset text effect
-	display_text_len = 0  # Ensure smooth typing effect starts
+	display_text()
 
 
 func _process(delta: float):
+	# handle text
 	text_length = len(dialogue_box.text)
+	
 	if dialogue_box.visible_characters < text_length:
 		display_text_len += delta * text_speed
 		dialogue_box.visible_characters = floor(display_text_len)
@@ -30,10 +34,28 @@ func _process(delta: float):
 		line_timeout -= delta
 
 func display_text():
-	dialogue_box.text = text_lines[Global.last_line_id]
-	dialogue_box.visible_characters = 0
-	display_text_len = 0
-	text_fully_displayed = false  # Reset text state
+	if char_box == null:
+		dialogue_box.text = text_lines[Global.last_line_id]
+		dialogue_box.visible_characters = 0
+		display_text_len = 0
+		text_fully_displayed = false  # Reset text state
+	else:
+		dialogue_box.text = text_lines[Global.last_line_id]
+		var space = dialogue_box.text.find(" ") # check if it's the 1st occurance of : and not randomly somewhere in text.
+		var colon = dialogue_box.text.find(":")
+		var char_name = ""
+		if space == colon +1 and colon != -1:
+			char_name = dialogue_box.text.get_slice(":",0)
+			dialogue_box.text = dialogue_box.text.get_slice(":",1)
+			print("has char name", char_name)
+
+		char_box.character_name_label.text = char_name
+		char_box.load_character(char_name)
+		
+
+		dialogue_box.visible_characters = 0
+		display_text_len = 0
+		text_fully_displayed = false  # Reset text state
 
 func _next_line():
 	if Global.last_line_id < len(text_lines) - 1:
@@ -59,6 +81,8 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.scene = 1
-				Global.last_line_id = 0
+				var scene
+				var week
+				var route
+				Global.update_state(scene,week,route)
 				Global.goto_gameplay()

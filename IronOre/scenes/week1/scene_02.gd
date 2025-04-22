@@ -7,7 +7,6 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"Cassy, fascinated by all this new knowledge to absorbe, has dived right in.",
 "My fingers fly across the keyboard, the blue glow of research papers and code samples lighting up my face. How do languages actually work? The question burns in my skull, urgent and electric. I need to crack this open. I start digging—forums, textbooks, ancient forum threads buried under layers of internet dust. Hours melt away.",
 "And then—there it is. Parsers. A cascade of logic that turns words into action. Tokenizers. Chiseling raw text into meaningful blocks, like sculpting syntax from marble. My screen flickers with diagrams of abstract syntax trees, branches spiraling into fractal precision. I lean closer, breath catching. It’s… beautiful. A map of thought, a scaffold for meaning.",
 "But then—assembly language. The shadow beneath the glitter. Lines of cryptic commands, raw and unapologetic. My throat tightens. This is where the magic turns real, where abstractions bleed into the machine’s veins. My notebook fills with feverish scribbles: registers, opcodes, memory addresses. The words tremble on the page, alive.",
@@ -36,29 +35,22 @@ func _process(delta: float):
 		line_timeout -= delta
 
 func display_text():
-	if char_box == null:
-		dialogue_box.text = text_lines[Global.last_line_id]
-		dialogue_box.visible_characters = 0
-		display_text_len = 0
-		text_fully_displayed = false  # Reset text state
-	else:
-		dialogue_box.text = text_lines[Global.last_line_id]
+	dialogue_box.text = text_lines[Global.last_line_id]
+	dialogue_box.visible_characters = 0
+	display_text_len = 0
+	text_fully_displayed = false  # Reset text state
+	
+	# handle character
+	if char_box != null:
 		var space = dialogue_box.text.find(" ") # check if it's the 1st occurance of : and not randomly somewhere in text.
 		var colon = dialogue_box.text.find(":")
 		var char_name = ""
 		if space == colon +1 and colon != -1:
 			char_name = dialogue_box.text.get_slice(":",0)
-			dialogue_box.text = dialogue_box.text.get_slice(":",1)
 			print("has char name", char_name)
 
 		char_box.character_name_label.text = char_name
 		char_box.load_character(char_name)
-		
-
-		dialogue_box.visible_characters = 0
-		display_text_len = 0
-		text_fully_displayed = false  # Reset text state
-		
 
 
 func _next_line():
@@ -85,5 +77,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(2)
+				Global.update_state(3)
 				Global.goto_next_scene()

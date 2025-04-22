@@ -1,7 +1,7 @@
 extends Node2D
 
 var text_speed = 60
-@onready var dialogue_box = $WallText/text_ui/PanelContainer/RichTextLabel
+@onready var dialogue_box = $WallText/text_ui/PanelContainer/MarginContainer/RichTextLabel
 var text_length:int = 0
 var display_text_len:float = 0
 
@@ -71,6 +71,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.scene = 1
-				Global.last_line_id = 0
-				Global.goto_gameplay()
+				Global.update_state(1, 1, 0)
+				Global.goto_next_scene()

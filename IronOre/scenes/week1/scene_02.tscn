@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://p6s4njlxsw2f"]
+
+[ext_resource type="Script" uid="uid://3lgpvgqfb8sv" path="res://scenes/week1/scene_02.gd" id="1_fuavt"]
+[ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_4h48c"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_wpive"]
+[ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="4_gfk1h"]
+
+[node name="Scene2" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_fuavt")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4h48c")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("3_wpive")]
+
+[node name="WallText" parent="." instance=ExtResource("4_gfk1h")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 189.0
+color = Color(1, 1, 1, 0)

@@ -118,7 +118,20 @@ func reset_game():
 	save_game()
 	return load_game()
 
-func goto_scene(scene_path):
+func update_state(nscene = scene,nweek = week, nroute = route ):
+	route = nroute
+	week = nweek
+	scene = nscene
+	pass
+
+func goto_next_scene():
+	last_line_id = 0
+	var scene_path
+	if week == 0:
+		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]
+	else:
+		scene_path = "res://scenes/week%s/scene_%s%s.tscn" % [week,route,scene]
+	print(scene_path)
 	var curr_scene = load(scene_path).instantiate()
 	
 	var active_scene = Global.main.get_child(0)
@@ -151,6 +164,7 @@ func exit() :
 	pass
 	
 func work():
+	print("work")
 	if stress > MAX_STRESS:
 		lang+=1
 		return
@@ -163,6 +177,8 @@ func work():
 	
 
 func study():
+	print("study")
+
 	if stress > 5:
 		learn+=1
 		return
@@ -174,5 +190,7 @@ func study():
 	
 
 func relax():
+	print("relax")
+
 	if stress > 0:
 		stress-=1

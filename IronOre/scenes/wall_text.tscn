@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1wqquw5v2qh5"]
+[gd_scene load_steps=4 format=3 uid="uid://d1wqquw5v2qh5"]
 
 [ext_resource type="Theme" uid="uid://bafo1vsjtsudl" path="res://Assets/backrounds/generic_dialogue.tres" id="1_858bo"]
+[ext_resource type="Theme" uid="uid://dcis0fmdx4srp" path="res://styles/dialogue.tres" id="2_04wod"]
+
+[sub_resource type="GDScript" id="GDScript_04wod"]
+script/source = "extends Node2D
+
+@onready var text_box = $text_ui/PanelContainer/MarginContainer/RichTextLabel
+"
 
 [node name="WallText" type="Node2D"]
+script = SubResource("GDScript_04wod")
 
 [node name="text_ui" type="CanvasLayer" parent="."]
 
@@ -16,8 +24,13 @@ offset_bottom = 570.0
 grow_horizontal = 2
 theme = ExtResource("1_858bo")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="text_ui/PanelContainer"]
 layout_mode = 2
+theme = ExtResource("2_04wod")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="text_ui/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_04wod")
 text = "Cassy is a model university student with perfect grades and attendance.
 He is fascinated by the world of computer science.
 In particular, Cassy is amazed by programming langueges.
@@ -25,3 +38,4 @@ One day, he saw a video where a streamer wrote a simple programming language in 
 Cassy got inspired to make one of his own for the sake of experience.
 However, Cassy didn't have any ideas for the shape of the languege neither he had enough free time to actually work on his languege.
 So, Cassy postponed this adventure for later."
+justification_flags = 162

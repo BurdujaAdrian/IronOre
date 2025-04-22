@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3g4o05n7chor" path="res://scenes/week1/scene_01.gd" id="1_fwcet"]
 [ext_resource type="Texture2D" uid="uid://y5apgahis3jw" path="res://Assets/backrounds/free-photo-of-library-hall-with-tables-bookcases-and-librarian-desk.jpeg" id="2_ctvf5"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="3_1gg3w"]
-[ext_resource type="PackedScene" uid="uid://bxouvway4hxv7" path="res://scenes/char_text.tscn" id="4_fwcet"]
+[ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="4_fwcet"]
 
 [node name="Scene1" type="Node2D"]
 physics_interpolation_mode = 2
@@ -23,7 +23,7 @@ expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("3_1gg3w")]
 
-[node name="charText" parent="." instance=ExtResource("4_fwcet")]
+[node name="WallText" parent="." instance=ExtResource("4_fwcet")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

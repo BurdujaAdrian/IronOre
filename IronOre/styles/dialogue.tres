@@ -14,5 +14,10 @@ border_color = Color(1, 0.65193, 0.302151, 1)
 border_blend = true
 
 [resource]
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 100
+MarginContainer/constants/margin_right = 100
+MarginContainer/constants/margin_top = 20
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qe5mm")
+RichTextLabel/constants/line_separation = 10
 RichTextLabel/font_sizes/normal_font_size = 30
