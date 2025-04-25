@@ -7,11 +7,26 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"My fingers fly across the keyboard, the blue glow of research papers and code samples lighting up my face. How do languages actually work? The question burns in my skull, urgent and electric. I need to crack this open. I start digging—forums, textbooks, ancient forum threads buried under layers of internet dust. Hours melt away.",
-"And then—there it is. Parsers. A cascade of logic that turns words into action. Tokenizers. Chiseling raw text into meaningful blocks, like sculpting syntax from marble. My screen flickers with diagrams of abstract syntax trees, branches spiraling into fractal precision. I lean closer, breath catching. It’s… beautiful. A map of thought, a scaffold for meaning.",
-"But then—assembly language. The shadow beneath the glitter. Lines of cryptic commands, raw and unapologetic. My throat tightens. This is where the magic turns real, where abstractions bleed into the machine’s veins. My notebook fills with feverish scribbles: registers, opcodes, memory addresses. The words tremble on the page, alive.",
-"I sit back, hands shaking. All these pieces—parsers dissecting intent, tokens like puzzle pieces, trees branching into logic, assembly whispering to silicon—they’re connected. A symphony. And I… I’m conducting it. The realization hits like a spark. This is how you build a universe.",
-"The clock blinks 3:47 a.m. I don’t care. My project pulses in my chest now, no longer a dream but a heartbeat. I just need to build."
+"I hover over Liam Vogt’s contact. “Send me your spec. I’ll break it for you.”",
+
+"Email Subject: HELP. Parser recursion hell.",
+
+"He replies in 7 minutes:",
+
+"“Left recursion in your grammar. Classic.  
+Switch to precedence climbing.  
+Also, your tokenizer’s missing a sync after literals.”  
+Attached: A 10-line diff.",
+
+"I apply the changes. The infinite loop evaporates. Tests pass.",
+
+"He notices my ad-hoc error recovery. “Use a panic mode with synchronized tokens—here’s how.”",
+
+"Two hours later, the parser’s not just fixed—better. I email back: “How do I repay you?”",
+
+"Reply: “By shiping it. Then when break it again, fix it.”",
+
+"I close the laptop. For the first time in weeks, I have… time.",
 ]
 
 var line_timeout:float = 0.5
@@ -83,5 +98,8 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
+				# due to the bug being fixed, less stress and work has been succesfully done
+				Global.work()
+				Global.relax()
 				Global.update_state(1,8)
 				Global.goto_gameplay()

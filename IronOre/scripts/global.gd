@@ -78,7 +78,7 @@ func load_game() -> Node:
 	stress = config_file.get_value("Variables", "stress", stress)
 	learn = config_file.get_value("Variables", "learn", learn)
 	is_mentor = config_file.get_value("Variables", "Profesor", is_mentor)
-	is_mentor = config_file.get_value("Variables", "drujoc", is_friend)
+	is_friend = config_file.get_value("Variables", "drujoc", is_friend)
 	corect_bug = config_file.get_value("Variables", "bug", corect_bug)
 
 	
