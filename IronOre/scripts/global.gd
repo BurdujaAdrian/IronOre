@@ -19,7 +19,6 @@ var corect_bug = false
 var llvm_route = false
 
 var week:int     = 0
-var route:routes = routes.prologue; enum routes{main,gpt,prologue,party}
 var scene:int    = 1
 
 var was_gameplay:bool = false
@@ -50,7 +49,6 @@ func save_game() :
 	config_file.set_value("Variables", "bug", corect_bug)
 	
 	config_file.set_value("Progress", "week",week)
-	config_file.set_value("Progress","route",route)
 	config_file.set_value("Progress","scene",scene)
 	
 	config_file.set_value("Progress","line",last_line_id)
@@ -83,7 +81,6 @@ func load_game() -> Node:
 
 	
 	week = config_file.get_value("Progress", "week",week)
-	route = config_file.get_value("Progress","route",route)
 	scene = config_file.get_value("Progress","scene",scene)
 	
 	last_line_id = config_file.get_value("Progress","line",0)
@@ -98,7 +95,7 @@ func load_game() -> Node:
 	elif was_gameplay:
 		scene_path = "res://scenes/gameplay.tscn"
 	else:
-		scene_path = "res://scenes/week%s/scene_%s%s.tscn" % [week,route,scene]
+		scene_path = "res://scenes/week%s/scene_0%s.tscn" % [week,scene]
 	print(scene_path)
 	var scene_node = load(scene_path).instantiate()
 	
@@ -116,7 +113,6 @@ func reset_game():
 	llvm_route = false
 
 	week     = 0
-	route = routes.prologue
 	scene    = 1
 
 	last_choice = game_choice.none
@@ -126,8 +122,7 @@ func reset_game():
 	save_game()
 	return load_game()
 
-func update_state(nscene = scene,nweek = week, nroute = route ):
-	route = nroute
+func update_state(nscene = scene,nweek = week):
 	week = nweek
 	scene = nscene
 	pass
@@ -138,7 +133,7 @@ func goto_next_scene():
 	if week == 0:
 		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]
 	else:
-		scene_path = "res://scenes/week%s/scene_%s%s.tscn" % [week,route,scene]
+		scene_path = "res://scenes/week%s/scene_0%s.tscn" % [week,scene]
 	print(scene_path)
 	var curr_scene = load(scene_path).instantiate()
 	
@@ -178,29 +173,29 @@ func work():
 	if stress > MAX_STRESS:
 		lang+=1
 		return
-	lang +=3
+	_unsafe_work()
 	
 	if lang > MAX_WORK:
 		lang = MAX_WORK
 		
-	stress+=1
+	_stress()
 	
 	last_choice = curr_choice
 	curr_choice = game_choice.work
+	was_gameplay = false
 	
-
 func study():
 	print("study")
 
 	if stress > 5:
 		learn+=1
 		return
-	learn+=3
+	_unsafe_learn()
 	
 	if learn > MAX_STUDY:
 		learn = MAX_STUDY
-	stress+=1
-	
+	_stress()
+		
 	last_choice = curr_choice
 	curr_choice = game_choice.learn
 	was_gameplay = false
@@ -209,7 +204,33 @@ func relax():
 	print("relax")
 
 	if stress > 0:
-		stress-=1
+		_unsafe_relax()
 	
 	last_choice = curr_choice
 	curr_choice = game_choice.relax
+	was_gameplay = false
+
+# helper functions, not to be used often
+func _unwork():
+	print("Unwork")
+	lang -=3
+
+func _unlearn():
+	print("unlearn")
+	learn -=3
+
+func _stress():
+	print("Strees")
+	stress +=1
+	
+func _unsafe_work():
+	print("Unsafe work")
+	lang +=3
+
+func _unsafe_learn():
+	print("unsafe learn")
+	learn +=3
+
+func _unsafe_relax():
+	print("unsafe relax")
+	stress +=1

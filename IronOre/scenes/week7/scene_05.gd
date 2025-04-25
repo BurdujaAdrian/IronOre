@@ -99,7 +99,6 @@ func _input(event: InputEvent) -> void:
 				line_timeout = 0.5
 			else :
 				# due to the bug being fixed, less stress and work has been succesfully done
-				Global.work()
-				Global.relax()
+				Global._unsafe_work()
 				Global.update_state(1,8)
 				Global.goto_gameplay()

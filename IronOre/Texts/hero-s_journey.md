@@ -115,7 +115,7 @@ programming langueges.
 
 
 ---
-@
+
 
 - week 7: 
 Cassy will encounter a vicious bug in the languege. The parser uses recursive descent
@@ -154,7 +154,7 @@ The bug is discovered
 
 
 
----
+--- @
 - week 8:
 < The hero prepares to confront the central ordeal, often approaching a dangerous 
 location (literal or metaphorical) where their greatest fear or goal resides. >
