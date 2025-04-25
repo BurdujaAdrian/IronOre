@@ -4,6 +4,7 @@ var global_true = true
 
 var main:Node
 
+const MIN_STUDY = MAX_STUDY/2
 
 const MAX_STUDY = 15
 const MAX_WORK = 15
@@ -17,6 +18,8 @@ var is_mentor = false
 var is_friend = false
 var corect_bug = false
 var llvm_route = false
+var gpt = false
+
 var stress_overload = false
 
 var week:int     = 0
@@ -49,7 +52,7 @@ func save_game() :
 	config_file.set_value("Variables", "drujoc", is_friend)
 	config_file.set_value("Variables", "bug", corect_bug)
 	config_file.set_value("Variables", "llvm_route", llvm_route)
-	config_file.set_value("Variables", "stress_overload",stress_overload)
+	config_file.set_value("Variables", "gpt",gpt)
 	
 	config_file.set_value("Progress", "week",week)
 	config_file.set_value("Progress","scene",scene)
@@ -82,7 +85,7 @@ func load_game() -> Node:
 	is_friend = config_file.get_value("Variables", "drujoc", is_friend)
 	corect_bug = config_file.get_value("Variables", "bug", corect_bug)
 	llvm_route = config_file.get_value("Variables", "llvm_route",llvm_route)
-	stress_overload = config_file.get_value("Variables", "stress_overload",stress_overload)
+	gpt = config_file.get_value("Variables", "gpt",gpt)
 	
 	week = config_file.get_value("Progress", "week",week)
 	scene = config_file.get_value("Progress","scene",scene)
@@ -115,6 +118,7 @@ func reset_game():
 	is_friend = false
 	corect_bug = false
 	llvm_route = false
+	gpt = false
 	stress_overload = false
 
 

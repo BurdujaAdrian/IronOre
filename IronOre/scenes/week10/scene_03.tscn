@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7rnfvg1nw6h"]
+
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_0i2u8"]
+[ext_resource type="Script" uid="uid://bo6ppu7f2q7ka" path="res://scenes/week10/scene_03.gd" id="1_pwcuc"]
+[ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_5bmyx"]
+[ext_resource type="PackedScene" uid="uid://bxouvway4hxv7" path="res://scenes/char_text.tscn" id="2_tmfcn"]
+
+[node name="Scene3" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_pwcuc")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5bmyx")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("1_0i2u8")]
+
+[node name="charText" parent="." instance=ExtResource("2_tmfcn")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 189.0
+color = Color(1, 1, 1, 0)
