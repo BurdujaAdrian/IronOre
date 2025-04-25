@@ -17,6 +17,7 @@ var is_mentor = false
 var is_friend = false
 var corect_bug = false
 var llvm_route = false
+var stress_overload = false
 
 var week:int     = 0
 var scene:int    = 1
@@ -47,6 +48,8 @@ func save_game() :
 	config_file.set_value("Variables", "Profesor", is_mentor)
 	config_file.set_value("Variables", "drujoc", is_friend)
 	config_file.set_value("Variables", "bug", corect_bug)
+	config_file.set_value("Variables", "llvm_route", false)
+	config_file.set_value("Variables", "stress_overload",false)
 	
 	config_file.set_value("Progress", "week",week)
 	config_file.set_value("Progress","scene",scene)
@@ -78,7 +81,8 @@ func load_game() -> Node:
 	is_mentor = config_file.get_value("Variables", "Profesor", is_mentor)
 	is_friend = config_file.get_value("Variables", "drujoc", is_friend)
 	corect_bug = config_file.get_value("Variables", "bug", corect_bug)
-
+	llvm_route = config_file.get_value("Variables", "llvm_route",llvm_route)
+	stress_overload = config_file.get_value("Variables", "stress_overload",stress_overload)
 	
 	week = config_file.get_value("Progress", "week",week)
 	scene = config_file.get_value("Progress","scene",scene)
@@ -111,6 +115,8 @@ func reset_game():
 	is_friend = false
 	corect_bug = false
 	llvm_route = false
+	stress_overload = false
+
 
 	week     = 0
 	scene    = 1
@@ -220,17 +226,15 @@ func _unlearn():
 	learn -=3
 
 func _stress():
-	print("Strees")
+	if stress >= MAX_STRESS:
+		stress_overload = true
 	stress +=1
 	
 func _unsafe_work():
-	print("Unsafe work")
 	lang +=3
 
 func _unsafe_learn():
-	print("unsafe learn")
 	learn +=3
 
 func _unsafe_relax():
-	print("unsafe relax")
 	stress +=1

@@ -28,7 +28,10 @@ func _ready():
 	pass
 
 func ch1_f():
-	Global.llvm_route
+	Global.llvm_route = true
+	Global.update_state(3)
+	Global._stress()
+	Global.goto_next_scene()
 	pass
 func ch2_f():
 	print("Choice 2")
