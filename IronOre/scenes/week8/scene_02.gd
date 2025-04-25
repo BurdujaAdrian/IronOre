@@ -34,7 +34,13 @@ func ch1_f():
 	Global.goto_next_scene()
 	pass
 func ch2_f():
-	print("Choice 2")
+	Global.update_state(4)
+	if Global.lang < Global.MAX_WORK:
+		Global._unsafe_work()
+	else:
+		print("Why game bug")
+
+	Global.goto_next_scene()
 	pass
 func ch3_f():
 	print("Choice 3")

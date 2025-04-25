@@ -5,20 +5,20 @@
 [node name="choice_ui" type="CanvasLayer" parent="."]
 
 [node name="ch1" type="Button" parent="choice_ui"]
-offset_left = 369.0
-offset_top = 315.0
-offset_right = 495.0
-offset_bottom = 392.0
+offset_left = 276.0
+offset_top = 276.0
+offset_right = 476.0
+offset_bottom = 353.0
 action_mode = 0
 text = "Choice 1"
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="ch2" type="Button" parent="choice_ui"]
-offset_left = 657.0
-offset_top = 315.0
-offset_right = 783.0
-offset_bottom = 392.0
+offset_left = 677.0
+offset_top = 276.0
+offset_right = 877.0
+offset_bottom = 353.0
 action_mode = 0
 text = "Choice 2
 "
@@ -26,9 +26,9 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="ch3" type="Button" parent="choice_ui"]
-offset_left = 511.5
+offset_left = 476.5
 offset_top = 392.0
-offset_right = 637.5
+offset_right = 676.5
 offset_bottom = 469.0
 action_mode = 0
 text = "Choice 3"

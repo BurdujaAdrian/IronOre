@@ -48,8 +48,8 @@ func save_game() :
 	config_file.set_value("Variables", "Profesor", is_mentor)
 	config_file.set_value("Variables", "drujoc", is_friend)
 	config_file.set_value("Variables", "bug", corect_bug)
-	config_file.set_value("Variables", "llvm_route", false)
-	config_file.set_value("Variables", "stress_overload",false)
+	config_file.set_value("Variables", "llvm_route", llvm_route)
+	config_file.set_value("Variables", "stress_overload",stress_overload)
 	
 	config_file.set_value("Progress", "week",week)
 	config_file.set_value("Progress","scene",scene)
@@ -237,4 +237,4 @@ func _unsafe_learn():
 	learn +=3
 
 func _unsafe_relax():
-	stress +=1
+	stress -=1

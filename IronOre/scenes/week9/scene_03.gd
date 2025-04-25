@@ -7,35 +7,41 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"The LLVM docs sprawl across my screen like a dissected alien corpse—layers of IR, optimization passes, JIT compilers spilling viscera. I rub my eyes. The clock blinks 3:08 a.m. Just. Generate. Code.
+	
+"The LLVM IR sprawls across my screen, a jagged tapestry of %1 = add i32 %0, 2 and br label %exit. Coffee crusts the mug beside me. The third—or fourth—rewrite of the codegen pass glares back, littered with segmentation fault corpses.
 ",
-"“Start simple,” I mutter, cloning the tutorial repo. HelloWorld.ll. A single function: @main() ret i32 0. I run llc, feed it to Clang. The terminal spits out an executable.
+"“Lower the AST,” I mutter, fingers cramping. The structs misalign again. i64 masquerades as i32*. The optimizer chokes on opt -O2, spewing hex dumps.
 ",
-"It works.
+"I scrap the generated IR. Hand-code a function:
 ",
-"“Now my code,” I whisper, porting the arithmetic parser’s AST to LLVM IR. Type definitions first. %Number = type i32. Easy. Function signatures. declare i32 @printf(). The screen glows, lulling me into confidence.
-",
-"Then—
-",
-"The first error: PHI nodes must have an equal number of incoming values. My AST’s control flow graph has a loop with mismatched branches. LLVM’s verifier snarls. I curse, rewriting the basic blocks.
-",
-"New error:
+"
 ```
-Instruction does not dominate all uses!
+define i32 @main() {  
+  %result = call i32 @evaluate(i32 2, i32 3)  
+  ret i32 %result  
+}  
 ```
+llc compiles. clang links. The executable runs. Returns 5. A flicker.
 ",
-"I slam my forehead on the desk. “Dominance. Dominance.” The word mocks me. I sketch CFGs on the wall with a whiteboard marker. Arrows, nodes, lifetimes. LLVM isn’t a tool—it’s a lawyer, dissecting every assumption.
+"Then the real test: the parser’s AST for (2 + 3) * 4. Nodes map to IR—%add = add i32 2, 3, %mul = mul i32 %add, 4.
 ",
-"My phone buzzes. A text from Mom: “Proud of you!” I almost cry.
+"Error: Instruction does not dominate all uses!
 ",
-"By dawn, I’ve brute-forced a working IR for 2 + 3 * 4. The compiled binary runs. Returns 14.
+"Whiteboard diagrams metastasize—arrows, labels, dominance frontiers. The verifier demands PHI nodes. I carve them into the IR:
 ",
-"“Victory,” I croak, voice raw.
+"
+```
+%0 = phi i32 [ 2, %entry ], [ %add, %loop ]  
+```
+The silence is brittle. The optimizer runs. No crashes.
 ",
-"Then I glance at the next milestone: Object-oriented features.
+"The test passes. 20.
 ",
-"The LLVM beast grins back."
+"I slump, eyelids sandpaper. The next test—if statements—looms. LLVM’s shadow stretches, unblinking.
+",
+
 ]
+
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
 
@@ -105,5 +111,6 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(2)
+				Global.work()
+				Global.update_state(1,10)
 				Global.goto_next_scene()

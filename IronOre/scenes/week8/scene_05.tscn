@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhipvykgdsg4e"]
+[gd_scene load_steps=5 format=3 uid="uid://0hqywe4mrc3u"]
 
-[ext_resource type="Script" uid="uid://u7pwiu4j2i17" path="res://scenes/week8/scene_03.gd" id="1_y6url"]
+[ext_resource type="Script" uid="uid://dagfv5epgoedf" path="res://scenes/week8/scene_05.gd" id="1_gsnbj"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="2_5jlbp"]
-[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_xm5er"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_myt55"]
 [ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="3_b11qi"]
 
-[node name="Scene3" type="Node2D"]
+[node name="Scene5" type="Node2D"]
 physics_interpolation_mode = 2
-script = ExtResource("1_y6url")
+script = ExtResource("1_gsnbj")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xm5er")
+texture = ExtResource("2_myt55")
 expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("2_5jlbp")]

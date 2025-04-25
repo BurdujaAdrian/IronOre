@@ -7,35 +7,26 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"The LLVM docs sprawl across my screen like a dissected alien corpse—layers of IR, optimization passes, JIT compilers spilling viscera. I rub my eyes. The clock blinks 3:08 a.m. Just. Generate. Code.
+"The LLVM segfault mocks me. I snap a photo and text my friend: “Is this normal??”
 ",
-"“Start simple,” I mutter, cloning the tutorial repo. HelloWorld.ll. A single function: @main() ret i32 0. I run llc, feed it to Clang. The terminal spits out an executable.
+"He replies instantly: “LLVM? Oof. Try QBE, a backend that 75% the optimisation but 25% the complexity of LLVM.”
 ",
-"It works.
+"“QBE?” I type.
 ",
-"“Now my code,” I whisper, porting the arithmetic parser’s AST to LLVM IR. Type definitions first. %Number = type i32. Easy. Function signatures. declare i32 @printf(). The screen glows, lulling me into confidence.
+"He writes “Compiler backend. No monads, no lifetimes. You’ll Thank me later.”
 ",
-"Then—
+"I snort. Download QBE. Its entire spec fits in a man page.
 ",
-"The first error: PHI nodes must have an equal number of incoming values. My AST’s control flow graph has a loop with mismatched branches. LLVM’s verifier snarls. I curse, rewriting the basic blocks.
+"By midnight, the parser’s AST compiles to QBE IR. No pass managers. No registries. Just functions, blocks, ret.
 ",
-"New error:
-```
-Instruction does not dominate all uses!
-```
+"I send him a screenshot: “Compiles. Runs. Doesn’t crash.”
 ",
-"I slam my forehead on the desk. “Dominance. Dominance.” The word mocks me. I sketch CFGs on the wall with a whiteboard marker. Arrows, nodes, lifetimes. LLVM isn’t a tool—it’s a lawyer, dissecting every assumption.
+"“Told you. Now buy me pizza.”
 ",
-"My phone buzzes. A text from Mom: “Proud of you!” I almost cry.
+"I laught “Sure, it would have costed me way more to solve this myself”
 ",
-"By dawn, I’ve brute-forced a working IR for 2 + 3 * 4. The compiled binary runs. Returns 14.
-",
-"“Victory,” I croak, voice raw.
-",
-"Then I glance at the next milestone: Object-oriented features.
-",
-"The LLVM beast grins back."
 ]
+
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
 
@@ -105,5 +96,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(2)
-				Global.goto_next_scene()
+				Global.update_state(1,9)
+				Global.goto_gameplay()
