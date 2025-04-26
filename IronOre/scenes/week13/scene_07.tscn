@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ofywomdgwwj"]
+
+[ext_resource type="Script" uid="uid://3t6x4tpb7i4h" path="res://scenes/week13/scene_07.gd" id="1_absrf"]
+
+[node name="Scene7" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_absrf")

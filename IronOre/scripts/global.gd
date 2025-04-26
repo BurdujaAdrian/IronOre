@@ -138,7 +138,11 @@ func update_state(nscene = scene,nweek = week):
 	pass
 
 func goto_next_scene():
+	
 	last_line_id = 0
+	
+
+	
 	var scene_path
 	if week == 0:
 		scene_path ="res://scenes/prologue/scene%s.tscn" % [scene]
@@ -149,6 +153,9 @@ func goto_next_scene():
 	
 	var active_scene = Global.main.get_child(0)
 	print(get_tree_string())
+
+	if stress_overload:
+		active_scene = ""
 
 	Global.main.remove_child(active_scene)
 	print(get_tree_string())
