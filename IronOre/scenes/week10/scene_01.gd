@@ -3,7 +3,7 @@ extends Node2D
 
 func _ready():
 	if Global.learn < Global.MIN_STUDY:
-		print("Go the problems with uni route")
+		print("Go the 'problems with uni' route")
 		Global.update_state(2)
 		Global.goto_next_scene()
 	else :

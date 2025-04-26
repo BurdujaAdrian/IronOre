@@ -1,4 +1,3 @@
-
 extends Node2D
 
 var text_speed = 60
@@ -8,61 +7,11 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-
-"The terminal pings—a system update notification. I click “Install” absently, eyes glued to the lexer’s new string interpolation feature.
-",
-"Next morning:
-",
-"The compiler crashes on startup.
-",
-"error: 
-```
-llvm::Expected<llvm::orc::ThreadSafeModule> llvm::orc::IRCompileLayer::emit: mismatched IR version (expected 14, got 15)
-```
-",
-"I freeze. LLVM 15. Released yesterday.
-",
-"Error Log Dive:
-",
-"
-```
-/include/llvm/IR/PassManager.h:523: virtual void llvm::PassBuilder::parseModulePasses(llvm::PassBuilder::ModulePassManager&): Assertion failed!
-```
-",
-"I scour the release notes. “Removed legacy pass manager support.” My entire optimization pipeline relies on it.
-",
-"Rewrite the pass manager. Use the new ModulePassManager API.
-",
-"New error: 
-```
-undefined reference to llvm::createFunctionInliningPass()
-```
-",
-"Deprecated. Removed.
-",
-"I fork the LLVM 14 branch. Compile from source.
-",
-
-"
-```
-CMake error: Could NOT find Z3 (missing: Z3_LIBRARIES)
-```
-",
-"The universe laughs.
-",
-"Friday, 3 a.m.:
-",
-"The compiler runs. Barely. 2 + 2 returns 4.
-",
-"The if statement tests crash with:
-```
-llvm::sys::DynamicLibrary::SearchForAddressOfSymbol(): symbol not found: _ZN4llvm15TargetRegistry14lookupTargetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS6_PS6_
-```
-",
-"I don’t scream. I don’t cry.
-",
-"I book a lecture hall for Monday. To sleep.
-",
+"My fingers fly across the keyboard, the blue glow of research papers and code samples lighting up my face. How do languages actually work? The question burns in my skull, urgent and electric. I need to crack this open. I start digging—forums, textbooks, ancient forum threads buried under layers of internet dust. Hours melt away.",
+"And then—there it is. Parsers. A cascade of logic that turns words into action. Tokenizers. Chiseling raw text into meaningful blocks, like sculpting syntax from marble. My screen flickers with diagrams of abstract syntax trees, branches spiraling into fractal precision. I lean closer, breath catching. It’s… beautiful. A map of thought, a scaffold for meaning.",
+"But then—assembly language. The shadow beneath the glitter. Lines of cryptic commands, raw and unapologetic. My throat tightens. This is where the magic turns real, where abstractions bleed into the machine’s veins. My notebook fills with feverish scribbles: registers, opcodes, memory addresses. The words tremble on the page, alive.",
+"I sit back, hands shaking. All these pieces—parsers dissecting intent, tokens like puzzle pieces, trees branching into logic, assembly whispering to silicon—they’re connected. A symphony. And I… I’m conducting it. The realization hits like a spark. This is how you build a universe.",
+"The clock blinks 3:47 a.m. I don’t care. My project pulses in my chest now, no longer a dream but a heartbeat. I just need to build."
 ]
 
 var line_timeout:float = 0.5
@@ -134,6 +83,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global._stress()
-				Global.update_state(1,12)
+				Global.update_state(69,69)
 				Global.goto_gameplay()

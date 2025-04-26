@@ -1,4 +1,3 @@
-
 extends Node2D
 
 var text_speed = 60
@@ -8,60 +7,30 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-
-"The terminal pings—a system update notification. I click “Install” absently, eyes glued to the lexer’s new string interpolation feature.
+"My fingers hover over the enter key. The command line glows—./compile hello_world.lang. The air hums with laptop heat. No errors. No warnings. Just this.
 ",
-"Next morning:
+"I press it.
 ",
-"The compiler crashes on startup.
+"The cursor blinks. Once. Twice.
 ",
-"error: 
+"Hello, world.
+",
+"It’s there. Crisp. Unflinching. No segmentation faults. No infinite loops. Just… words.
+",
+"I stare. The screen blurs. My hands shake—not from caffeine, but from something raw, electric. It worked. First try.
+",
+"The code sprawls behind the scenes: a lexer that no longer chokes on quotes, a parser that dances around parentheses, an LLVM backend I’ve bullied into submission. All of it—every PHI node, every midnight panic attack—collapsed into this single, stupid string.
+",
+"A laugh escapes, jagged and disbelieving. Tears streak my cheeks. I don’t wipe them.
+",
+"The clock reads 4:17 a.m. I take a screenshot. Send it to no one. Save it as proof.png.
+",
+'Then I type the next test: 
 ```
-llvm::Expected<llvm::orc::ThreadSafeModule> llvm::orc::IRCompileLayer::emit: mismatched IR version (expected 14, got 15)
+print("Goodbye, world.").
 ```
-",
-"I freeze. LLVM 15. Released yesterday.
-",
-"Error Log Dive:
-",
-"
-```
-/include/llvm/IR/PassManager.h:523: virtual void llvm::PassBuilder::parseModulePasses(llvm::PassBuilder::ModulePassManager&): Assertion failed!
-```
-",
-"I scour the release notes. “Removed legacy pass manager support.” My entire optimization pipeline relies on it.
-",
-"Rewrite the pass manager. Use the new ModulePassManager API.
-",
-"New error: 
-```
-undefined reference to llvm::createFunctionInliningPass()
-```
-",
-"Deprecated. Removed.
-",
-"I fork the LLVM 14 branch. Compile from source.
-",
-
-"
-```
-CMake error: Could NOT find Z3 (missing: Z3_LIBRARIES)
-```
-",
-"The universe laughs.
-",
-"Friday, 3 a.m.:
-",
-"The compiler runs. Barely. 2 + 2 returns 4.
-",
-"The if statement tests crash with:
-```
-llvm::sys::DynamicLibrary::SearchForAddressOfSymbol(): symbol not found: _ZN4llvm15TargetRegistry14lookupTargetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS6_PS6_
-```
-",
-"I don’t scream. I don’t cry.
-",
-"I book a lecture hall for Monday. To sleep.
+',
+"The cursor blinks. Ready.
 ",
 ]
 
@@ -134,6 +103,6 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global._stress()
-				Global.update_state(1,12)
+				Global.update_state(1,13)
+				Global._unsafe_relax(min(Global.stress,Global.MAX_STRESS/2) )
 				Global.goto_gameplay()

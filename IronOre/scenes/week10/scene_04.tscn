@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqwbofyq1psr2" path="res://scenes/choice_ui.tscn" id="2_rle1t"]
 [ext_resource type="Texture2D" uid="uid://cr34ldw6kghmh" path="res://Assets/backrounds/wallpaperflare.com_wallpaper(1).jpg" id="2_wgslc"]
 
-[node name="Scene1" type="Node2D"]
+[node name="Scene4" type="Node2D"]
 physics_interpolation_mode = 2
 script = ExtResource("1_k48xi")
 

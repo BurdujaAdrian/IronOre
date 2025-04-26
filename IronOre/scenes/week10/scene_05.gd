@@ -7,7 +7,25 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"TODO: Add text for after choising to go the gpt route"]
+"The cursor blinks in the ChatGPT prompt: “Write recursive descent parser for math expressions with error recovery.”
+",
+"Response: “Here’s a Python implementation…”
+",
+"I copy-paste. The code runs. No infinite loops.
+",
+"I lean back, breath shallow. Why didn’t I do this sooner?
+",
+"New prompt: “Explain LLVM PHI nodes.”
+",
+"Response: “PHI nodes resolve conflicting values from different basic blocks…”
+",
+"By midnight, the compiler’s backend compiles 2 + 3 * 4 to LLVM IR. The tests pass.
+",
+"But the code smells alien—// GEN BY GPT-5 peppers every file.
+",
+"I close the laptop. Is this still mine?
+",
+]
 
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
@@ -78,5 +96,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(69,69)
+				Global.update_state(1,11)
 				Global.goto_gameplay()

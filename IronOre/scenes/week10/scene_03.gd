@@ -9,15 +9,15 @@ var display_text_len:float = 0
 var text_lines = [
 "Lecture Hall, 3 p.m.
 ",
-"Teacher: “Your last two assignments scored 52% and 48%. At this rate, you won’t graduate.”
+"Teacher: Your last two assignments scored 52% and 48%. At this rate, you won’t graduate.
 ",
 "The words hang like a segmentation fault. I stare at the floor, hands knotted.
 ",
-"Teacher: “What’s going on, Cassy? You were top of the cohort.”
+"Teacher: What’s going on, Cassy? You were top of the cohort.
 ",
 "My throat tightens. The language. The endless loops. The compiler’s shadow.
 ",
-"Teacher: “Prioritize. Or you’ll lose both.”
+"Teacher: Prioritize. Or you’ll lose both.
 "]
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared

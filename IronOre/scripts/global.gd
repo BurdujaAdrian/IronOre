@@ -4,7 +4,7 @@ var global_true = true
 
 var main:Node
 
-const MIN_STUDY = MAX_STUDY/2
+const MIN_STUDY = floor(MAX_STUDY/2)
 
 const MAX_STUDY = 15
 const MAX_WORK = 15
@@ -221,24 +221,25 @@ func relax():
 	was_gameplay = false
 
 # helper functions, not to be used often
-func _unwork():
+func _unwork(x = 3):
 	print("Unwork")
-	lang -=3
+	lang -= x
 
-func _unlearn():
+func _unlearn(x = 3):
 	print("unlearn")
-	learn -=3
+	learn -= x
 
-func _stress():
+func _stress(x = 1):
 	if stress >= MAX_STRESS:
 		stress_overload = true
-	stress +=1
+		return
+	stress += x
 	
-func _unsafe_work():
-	lang +=3
+func _unsafe_work(x = 3):
+	lang += x
 
-func _unsafe_learn():
-	learn +=3
+func _unsafe_learn(x = 3):
+	learn += x
 
-func _unsafe_relax():
-	stress -=1
+func _unsafe_relax(x = 1):
+	stress -= x

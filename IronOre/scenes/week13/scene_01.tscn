@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx0h3cyd4biqr"]
+
+[ext_resource type="Script" uid="uid://dycwmnscc6ey4" path="res://scenes/week13/scene_01.gd" id="1_itdgp"]
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_xy0t6"]
+[ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="2_hu1d6"]
+[ext_resource type="Texture2D" uid="uid://coal6cgishayg" path="res://Assets/backrounds/students-front-richter-480x320.png" id="2_o2824"]
+
+[node name="Scene1" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_itdgp")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o2824")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("1_xy0t6")]
+
+[node name="WallText" parent="." instance=ExtResource("2_hu1d6")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 189.0
+color = Color(1, 1, 1, 0)

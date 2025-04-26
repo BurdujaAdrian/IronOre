@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://pqacfy1c8kr0"]
+[gd_scene load_steps=5 format=3 uid="uid://pqacfy1c8kr0"]
 
 [ext_resource type="Script" uid="uid://blmwu2fyw18hp" path="res://scenes/week10/scene_05.gd" id="1_3sgs7"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_bun43"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_82nbm"]
 [ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="2_skng5"]
 
-[node name="Scene1" type="Node2D"]
+[node name="Scene5" type="Node2D"]
 physics_interpolation_mode = 2
 script = ExtResource("1_3sgs7")
 
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_82nbm")
 expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("1_bun43")]
