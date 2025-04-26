@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx0h3cyd4biqr"]
+[gd_scene load_steps=5 format=3 uid="uid://bt1nw55w8s6c"]
 
-[ext_resource type="Script" uid="uid://dycwmnscc6ey4" path="res://scenes/week13/scene_01.gd" id="1_itdgp"]
+[ext_resource type="Script" uid="uid://co7ju2o8rwel5" path="res://scenes/week13/scene_03.gd" id="1_ie4pg"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_xy0t6"]
 [ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="2_hu1d6"]
-[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_o2824"]
+[ext_resource type="Texture2D" uid="uid://b4fqdkrnotmud" path="res://Assets/backrounds/wallpaperflare.com_wallpaper.jpg" id="2_m38qt"]
 
-[node name="Scene1" type="Node2D"]
+[node name="Scene3" type="Node2D"]
 physics_interpolation_mode = 2
-script = ExtResource("1_itdgp")
+script = ExtResource("1_ie4pg")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o2824")
+texture = ExtResource("2_m38qt")
 expand_mode = 1
 
 [node name="ui" parent="." instance=ExtResource("1_xy0t6")]

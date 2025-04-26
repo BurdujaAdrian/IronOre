@@ -7,12 +7,9 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"The textbooks sprawl across my desk—Type Systems in Practice, Advanced Compiler Design. Highlighter ink bleeds through pages. My laptop hums, split between lecture notes and the compiler’s repo.
+"I pause under the stone archway, backpack sagging. The exam schedule poster flaps in the wind: FINAL PAPERS – 7 DAYS. A freshman bumps into me, muttering apologies.
 ",
-"“One week,” I mutter, squinting at the exam schedule on my phone. Three papers. Four coding practicals. The compiler’s last commit message glows: “Fixed register allocation (for real this time).”
-",
-"I chug cold coffee. My hands smell like solder.
-",
+"Lambda calculus. Garbage collection. Graduate. The words loop like a stuck program."
 ]
 
 var line_timeout:float = 0.5
@@ -84,5 +81,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(2)
+				Global.update_state(3)
 				Global.goto_next_scene()

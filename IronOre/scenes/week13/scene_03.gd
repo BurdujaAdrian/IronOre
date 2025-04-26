@@ -7,13 +7,12 @@ var text_length:int = 0
 var display_text_len:float = 0
 
 var text_lines = [
-"The textbooks sprawl across my desk—Type Systems in Practice, Advanced Compiler Design. Highlighter ink bleeds through pages. My laptop hums, split between lecture notes and the compiler’s repo.
+"The thesis notification pings as I shuffle past the bulletin boards. “Draft due in 48h.”
 ",
-"“One week,” I mutter, squinting at the exam schedule on my phone. Three papers. Four coding practicals. The compiler’s last commit message glows: “Fixed register allocation (for real this time).”
+"I lean against the trophy case, fingers trembling. The glass reflects my face—pale, cracked lips. Novel approach. Right.
 ",
-"I chug cold coffee. My hands smell like solder.
-",
-]
+"A janitor mops nearby, eyeing me. I flee.
+",]
 
 var line_timeout:float = 0.5
 var text_fully_displayed:bool = false  # Track if text has fully appeared
@@ -84,5 +83,5 @@ func _input(event: InputEvent) -> void:
 				_next_line()
 				line_timeout = 0.5
 			else :
-				Global.update_state(2)
+				Global.update_state(4)
 				Global.goto_next_scene()
