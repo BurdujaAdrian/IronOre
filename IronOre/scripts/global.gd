@@ -155,7 +155,7 @@ func goto_next_scene():
 	print(get_tree_string())
 
 	if stress_overload:
-		active_scene = ""
+		curr_scene = load("res://scenes/game_over.tscn").instantiate()
 
 	Global.main.remove_child(active_scene)
 	print(get_tree_string())
@@ -222,6 +222,7 @@ func relax():
 
 	if stress > 0:
 		_unsafe_relax()
+		stress_overload = false
 	
 	last_choice = curr_choice
 	curr_choice = game_choice.relax

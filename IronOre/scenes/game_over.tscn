@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmy6e84o2p6tk"]
 
+[ext_resource type="Script" uid="uid://cpo3m5nhmm41v" path="res://scripts/game_over.gd" id="1_tbwuq"]
 [ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_y55hi"]
-[ext_resource type="PackedScene" uid="uid://dqwbofyq1psr2" path="res://scenes/choice_ui.tscn" id="2_ms3kd"]
 
 [node name="Scene1" type="Node2D"]
 physics_interpolation_mode = 2
+script = ExtResource("1_tbwuq")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -17,9 +18,19 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="ui" parent="." instance=ExtResource("1_y55hi")]
+[node name="choice_ui2" type="CanvasLayer" parent="."]
 
-[node name="choice" parent="." instance=ExtResource("2_ms3kd")]
+[node name="ch1" type="Button" parent="choice_ui2"]
+offset_left = 476.0
+offset_top = 397.0
+offset_right = 676.0
+offset_bottom = 474.0
+action_mode = 0
+text = "Choice 1"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ui" parent="." instance=ExtResource("1_y55hi")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -32,3 +43,26 @@ layout_mode = 0
 offset_right = 150.0
 offset_bottom = 189.0
 color = Color(1, 1, 1, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 60.0
+offset_right = 737.0
+offset_bottom = 348.0
+theme_override_font_sizes/normal_font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 322.0
+offset_right = 737.0
+offset_bottom = 382.0
+theme_override_colors/default_color = Color(0.564706, 0, 0.0313726, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Cassy died of too much stress"
+horizontal_alignment = 1
+vertical_alignment = 1
