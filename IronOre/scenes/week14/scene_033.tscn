@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm7prd37u6dnm"]
+
+[ext_resource type="PackedScene" uid="uid://clodg2ukj6rvj" path="res://scenes/ui.tscn" id="1_8mxyt"]
+[ext_resource type="Script" uid="uid://d2bdscq7c57on" path="res://scenes/week14/scene_033.gd" id="1_jbu78"]
+[ext_resource type="PackedScene" uid="uid://d1wqquw5v2qh5" path="res://scenes/wall_text.tscn" id="2_2fs1t"]
+[ext_resource type="Texture2D" uid="uid://dp117twa3sbef" path="res://Assets/backrounds/PXL_20250311_210413422.png" id="2_d1hjt"]
+
+[node name="Scene1" type="Node2D"]
+physics_interpolation_mode = 2
+script = ExtResource("1_jbu78")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d1hjt")
+expand_mode = 1
+
+[node name="ui" parent="." instance=ExtResource("1_8mxyt")]
+
+[node name="WallText" parent="." instance=ExtResource("2_2fs1t")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="No_mouse" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 189.0
+color = Color(1, 1, 1, 0)
